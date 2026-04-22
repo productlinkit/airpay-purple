@@ -38,6 +38,8 @@ next-env.d.ts
 # Vercel
 .vercel
 
+.claude/
+
 # Local settings (not project config)
 .claude/settings.local.json
 
