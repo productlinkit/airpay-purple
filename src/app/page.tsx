@@ -1,9 +1,23 @@
+import { StickyNav } from "@/components/StickyNav";
+import { HeroSlider } from "@/components/HeroSlider";
+import { PartnersStats } from "@/components/PartnersStats";
+import { ProductsCarousel } from "@/components/ProductsCarousel";
+import { NewsCTA } from "@/components/NewsCTA";
+import { ContactCTA } from "@/components/ContactCTA";
+import { Footer } from "@/components/Footer";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-muted-foreground">
-        Clone target not yet built. Run <code className="font-mono text-foreground">/clone-website</code> to start.
-      </p>
-    </main>
+    <>
+      <StickyNav />
+      <main>
+        <HeroSlider />
+        <PartnersStats />
+        <ProductsCarousel />
+        <NewsCTA />
+        <ContactCTA />
+      </main>
+      <Footer />
+    </>
   );
 }

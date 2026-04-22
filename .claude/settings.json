@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -f public/images/Group-1.svg public/images/Vector.svg scripts/download-assets.mjs scripts/download-missing.mjs)",
+      "Bash(rmdir scripts *)",
+      "Bash(grep -vE '^\\(logo_airpay\\\\.webp|bx_wifi-1\\\\.svg|lucide_wallet-1\\\\.svg|mingcute_bank-line-1\\\\.svg|ps_globe-1\\\\.svg|uil_money-stack-1\\\\.svg\\)$')",
+      "Bash(xargs -I {} rm -f {})",
+      "Bash(rm -f 2.png Header-18.png Header.svg uil_money-stack-1.svg)",
+      "Bash(rm -rf .aider.conf.yml .amazonq .augment .clinerules .codex .continue .cursor .gemini .opencode .qodo .windsurf .windsurfrules .github)",
+      "Bash(rm -rf docs scripts CHANGELOG.md GEMINI.md AGENTS.md CLAUDE.md)",
+      "Bash(rm -f tsconfig.tsbuildinfo)"
+    ]
+  }
+}
