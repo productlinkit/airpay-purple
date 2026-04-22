@@ -226,7 +226,7 @@ export const products: ProductDetail[] = [
     tagline: "Payments at the counter, online-grade reporting.",
     description:
       "Modern EDC terminals and acquiring infrastructure for in-store payments — connected to the same dashboard and reporting your online channels use.",
-    illustration: "/images/illustration/illustration08.webp",
+    illustration: "/images/illustration/illustration12.webp",
     icon: CreditCard,
     highlights: ["Acquiring", "QR & contactless", "Unified reporting"],
     features: [
