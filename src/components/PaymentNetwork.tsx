@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { ShieldCheck, Lock, Landmark, LineChart, type LucideIcon } from "lucide-react";
+import { ShieldCheck, Lock, Landmark, Gauge, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ScrollReveal } from "./ScrollReveal";
 
@@ -90,9 +90,9 @@ interface WhyItem {
 
 const whyItems: WhyItem[] = [
   {
-    icon: ShieldCheck,
-    title: "PCI DSS",
-    subtitle: "Fast Integration",
+    icon: Landmark,
+    title: "Bank Indonesia",
+    subtitle: "Licensed",
   },
   {
     icon: Lock,
@@ -100,14 +100,14 @@ const whyItems: WhyItem[] = [
     subtitle: "Compliant",
   },
   {
-    icon: Landmark,
-    title: "Bank Indonesia",
-    subtitle: "Licensed",
+    icon: ShieldCheck,
+    title: "PCI DSS",
+    subtitle: "Level 1 Verified",
   },
   {
-    icon: LineChart,
-    title: "Real-Time",
-    subtitle: "Analytics",
+    icon: Gauge,
+    title: "Fast Integration",
+    subtitle: "Unified Dashboard",
   },
 ];
 

@@ -11,6 +11,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Contact Sales — Let's build your payment growth",
@@ -139,6 +140,25 @@ export default function ContactPage() {
                 <Field label="Work email" placeholder="jane@company.com" type="email" />
                 <Field label="Company" placeholder="Company name" />
                 <Field label="Country" placeholder="Where are you based?" />
+                <div className="sm:col-span-2">
+                  <label className="mb-2 block text-[13px] font-bold text-black">
+                    What kind of product?
+                  </label>
+                  <select
+                    defaultValue=""
+                    className="w-full cursor-pointer appearance-none rounded-2xl border-2 border-transparent bg-white bg-[url('data:image/svg+xml;utf8,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%238169FF%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22><polyline%20points=%226%209%2012%2015%2018%209%22/></svg>')] bg-[length:18px_18px] bg-[right_1rem_center] bg-no-repeat p-4 pr-12 text-[14px] text-black outline-none transition-all focus:border-[#8169FF] focus:shadow-[0_8px_24px_rgba(128,105,255,0.15)]"
+                  >
+                    <option value="" disabled>
+                      Select a product
+                    </option>
+                    {products.map((p) => (
+                      <option key={p.slug} value={p.slug}>
+                        {p.name}
+                      </option>
+                    ))}
+                    <option value="other">Other / Not sure yet</option>
+                  </select>
+                </div>
                 <div className="sm:col-span-2">
                   <label className="mb-2 block text-[13px] font-bold text-black">
                     What can we help with?
