@@ -33,6 +33,20 @@ const logoPages: string[][] = [
     "/images/telco/ltc.png",
     "/images/telco/tplus.png",
   ],
+  [
+    "/images/channels/Indonesia/QRIS.png",
+    "/images/channels/Indonesia/DANA.png",
+    "/images/channels/Indonesia/GOPAY.png",
+    "/images/channels/Indonesia/OVO.png",
+    "/images/channels/Indonesia/ShopeePay.png",
+    "/images/channels/Indonesia/LinkAja.png",
+    "/images/channels/Indonesia/BCA.png",
+    "/images/channels/Indonesia/Mandiri.png",
+    "/images/channels/Indonesia/BNI.png",
+    "/images/channels/Indonesia/BRI.png",
+    "/images/channels/Indonesia/PermataBank.png",
+    "/images/channels/Indonesia/CIMB.png",
+  ],
 ];
 
 interface StatItem {
@@ -175,22 +189,29 @@ export function PartnersStats() {
 
           <div
             key={activePage}
-            className="mt-8 grid animate-fade-in grid-cols-2 gap-x-6 gap-y-8"
+            className={cn(
+              "mt-8 grid animate-fade-in gap-x-3 gap-y-5",
+              currentLogos.length > 8 ? "grid-cols-3" : "grid-cols-2"
+            )}
           >
-            {Array.from({ length: 8 }).map((_, i) => (
+            {currentLogos.map((src, i) => (
               <div
                 key={i}
-                className="flex h-12 items-center justify-center transition-transform hover:scale-110"
-              >
-                {currentLogos[i] && (
-                  <Image
-                    src={currentLogos[i]}
-                    alt={`Partner ${i + 1}`}
-                    width={100}
-                    height={36}
-                    className="h-9 w-auto object-contain"
-                  />
+                className={cn(
+                  "flex items-center justify-center transition-transform hover:scale-110",
+                  currentLogos.length > 8 ? "h-16" : "h-12"
                 )}
+              >
+                <Image
+                  src={src}
+                  alt={`Partner ${i + 1}`}
+                  width={120}
+                  height={48}
+                  className={cn(
+                    "w-auto object-contain",
+                    currentLogos.length > 8 ? "h-11" : "h-9"
+                  )}
+                />
               </div>
             ))}
           </div>
