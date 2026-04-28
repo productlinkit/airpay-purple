@@ -42,8 +42,9 @@ const channels = [
 
 const offices = [
   { city: "Jakarta", country: "Indonesia" },
-  { city: "Singapore", country: "Singapore" },
-  { city: "Dubai", country: "UAE" },
+  { city: "Mumbai", country: "India" },
+  { city: "Vientiane", country: "Laos" },
+  { city: "Hanoi", country: "Vietnam" },
 ];
 
 function LinkedInIcon({ className }: { className?: string }) {

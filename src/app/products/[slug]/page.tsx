@@ -7,6 +7,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { Footer } from "@/components/Footer";
 import { ContactCTA } from "@/components/ContactCTA";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { WhyChooseCard } from "@/components/WhyChooseCard";
 import { products, getProductBySlug } from "@/lib/products";
 
 export function generateStaticParams() {
@@ -135,49 +136,51 @@ export default async function ProductPage({
           ))}
         </section>
 
-        {/* How it works + Use cases */}
-        <section className="mt-4 grid grid-cols-1 gap-4 px-4 sm:gap-6 sm:px-6 lg:mt-6 lg:grid-cols-3 lg:px-20">
-          <ScrollReveal className="lg:col-span-2">
-            <div className="h-full rounded-[24px] bg-[#F2F2F2] p-6 sm:p-8 lg:rounded-[30px] lg:p-10 transition-all hover:shadow-xl">
+        {/* How it works (full width) */}
+        <section className="mt-4 px-4 sm:px-6 lg:mt-6 lg:px-20">
+          <ScrollReveal>
+            <div className="rounded-[24px] bg-[#F2F2F2] p-6 sm:p-8 lg:rounded-[30px] lg:p-10 transition-all hover:shadow-xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#8169FF]/10 px-4 py-1.5 text-[12px] font-bold uppercase tracking-wider text-[#8169FF]">
                 How it works
               </div>
-              <h2 className="mt-4 font-heading text-[28px] font-bold text-black">
+              <h2 className="mt-4 font-heading text-[28px] font-bold text-black sm:text-[32px]">
                 A simple flow, end-to-end.
               </h2>
-              <ol className="mt-7 space-y-4">
+
+              <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
                 {product.steps.map((s, i) => (
                   <li
                     key={s.title}
-                    className="group flex gap-5 rounded-2xl bg-white p-5 transition-all hover:-translate-y-0.5 hover:shadow-md"
+                    className="group relative flex flex-col rounded-2xl bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
                   >
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#8169FF] to-[#A486FF] font-heading text-[18px] font-bold text-white">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#8169FF] to-[#A486FF] font-heading text-[18px] font-bold text-white">
                       {i + 1}
                     </div>
-                    <div>
-                      <h3 className="font-heading text-[16px] font-bold text-black transition-colors group-hover:text-[#8169FF]">
-                        {s.title}
-                      </h3>
-                      <p className="mt-1 text-[14px] leading-relaxed text-[#515A5E]">
-                        {s.description}
-                      </p>
-                    </div>
+                    <h3 className="mt-5 font-heading text-[16px] font-bold text-black transition-colors group-hover:text-[#8169FF]">
+                      {s.title}
+                    </h3>
+                    <p className="mt-2 text-[14px] leading-relaxed text-[#515A5E]">
+                      {s.description}
+                    </p>
                   </li>
                 ))}
               </ol>
             </div>
           </ScrollReveal>
+        </section>
 
-          <ScrollReveal delay={120} className="lg:col-span-1">
-            <div className="flex h-full flex-col rounded-[24px] bg-[#E4EEFA] p-6 sm:p-8 lg:rounded-[30px] transition-all hover:shadow-xl">
+        {/* Built for these teams + Why Choose */}
+        <section className="mt-4 grid grid-cols-1 items-stretch gap-4 px-4 sm:gap-6 sm:px-6 lg:mt-6 lg:grid-cols-2 lg:px-20">
+          <ScrollReveal className="h-full">
+            <div className="flex h-full flex-col rounded-[24px] bg-[#E4EEFA] p-6 sm:p-8 lg:rounded-[30px] lg:p-10 transition-all hover:shadow-xl">
               <div className="inline-flex w-fit items-center gap-2 rounded-full bg-[#8169FF]/10 px-4 py-1.5 text-[12px] font-bold uppercase tracking-wider text-[#8169FF]">
                 Use Cases
               </div>
-              <h2 className="mt-4 font-heading text-[24px] font-bold text-black">
+              <h2 className="mt-4 font-heading text-[24px] font-bold text-black sm:text-[28px]">
                 Built for these teams
               </h2>
 
-              <ul className="mt-6 flex-1 space-y-2.5">
+              <ul className="mt-7 grid flex-1 content-start gap-3 sm:grid-cols-2">
                 {product.useCases.map((u) => (
                   <li
                     key={u}
@@ -191,6 +194,10 @@ export default async function ProductPage({
                 ))}
               </ul>
             </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={120} className="h-full">
+            <WhyChooseCard cols={2} />
           </ScrollReveal>
         </section>
 

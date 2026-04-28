@@ -4,7 +4,7 @@ import { PartnersStats } from "@/components/PartnersStats";
 import { ProductsCarousel } from "@/components/ProductsCarousel";
 import { NewsCTA } from "@/components/NewsCTA";
 import { PaymentNetwork } from "@/components/PaymentNetwork";
-import { ContactCTA } from "@/components/ContactCTA";
+import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
         <ProductsCarousel />
         <NewsCTA />
         <PaymentNetwork />
-        <ContactCTA />
+        <ContactForm />
       </main>
       <Footer />
     </>
