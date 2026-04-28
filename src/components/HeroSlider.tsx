@@ -39,6 +39,8 @@ type Slide =
   | { kind: "aggregator" };
 
 const slides: Slide[] = [
+  { kind: "dcb" },
+  { kind: "aggregator" },
   {
     kind: "legacy",
     title: "Powering Global Digital Payments with One Integration",
@@ -46,8 +48,6 @@ const slides: Slide[] = [
     image: "/images/illustration/illustration01.webp",
     buttonText: "Get Started",
   },
-  { kind: "dcb" },
-  { kind: "aggregator" },
 ];
 
 export function HeroSlider() {
