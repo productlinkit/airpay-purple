@@ -99,7 +99,6 @@ const audiences = [
   { icon: Building2, label: "Fintech Platforms" },
   { icon: ShoppingBag, label: "Digital Marketplaces" },
   { icon: Gamepad2, label: "Gaming & Entertainment" },
-  { icon: Repeat2, label: "Subscription & SaaS Businesses" },
   { icon: Film, label: "Streaming & Digital Media" },
 ];
 
@@ -197,14 +196,14 @@ export function NewsCTA() {
             ))}
           </ul>
 
-          {/* Bottom illustration — enlarged & top-cropped */}
-          <div className="relative mt-auto h-[180px] w-full overflow-hidden">
+          {/* Bottom illustration — enlarged & pulled up */}
+          <div className="relative mt-4 h-[260px] w-full overflow-hidden sm:mt-6 sm:h-[300px] lg:h-[340px]">
             <Image
               src="/images/illustration/illustration07.webp"
               alt="Airpay infrastructure"
-              width={520}
-              height={520}
-              className="absolute left-1/2 top-0 -translate-x-1/2 h-auto w-[460px] max-w-none drop-shadow-[0_12px_30px_rgba(80,60,180,0.18)]"
+              width={640}
+              height={640}
+              className="absolute left-1/2 top-0 h-auto w-[360px] max-w-none -translate-x-1/2 drop-shadow-[0_12px_30px_rgba(80,60,180,0.18)] sm:w-[440px] lg:w-[560px]"
             />
           </div>
         </div>
@@ -236,19 +235,16 @@ function FlowColumn({
 
   return (
     <div
-      className={`flex h-full flex-col rounded-[24px] bg-white p-5 ring-1 ${ringColor} sm:p-6`}
-    >
+      className={`flex h-full flex-col rounded-[24px] bg-white p-5 ring-1 ${ringColor} sm:p-6`}>
       {/* Column header */}
       <div className="flex items-start gap-3">
         <span
-          className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl ${headerIconBg} ${accentText}`}
-        >
+          className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl ${headerIconBg} ${accentText}`}>
           <HeaderIcon className="h-5 w-5" />
         </span>
         <div>
           <h3
-            className={`font-heading text-[16px] font-extrabold leading-tight ${accentText} sm:text-[18px]`}
-          >
+            className={`font-heading text-[16px] font-extrabold leading-tight ${accentText} sm:text-[18px]`}>
             {title}
           </h3>
           <p className="mt-1.5 text-[12px] leading-snug text-[#515A5E] sm:text-[13px]">
@@ -264,8 +260,7 @@ function FlowColumn({
             {/* Step icon column with vertical dotted connector */}
             <div className="flex flex-col items-center">
               <span
-                className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl ${stepIconBg} ${accentText}`}
-              >
+                className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl ${stepIconBg} ${accentText}`}>
                 <step.icon className="h-4 w-4" />
               </span>
               {i < steps.length - 1 && (
@@ -279,8 +274,7 @@ function FlowColumn({
             <div className="flex-1 rounded-2xl bg-[#F8F8FB] p-3.5 transition-all hover:bg-white hover:shadow-md">
               <div className="flex items-center gap-2">
                 <span
-                  className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full ${numberBg} font-heading text-[10px] font-bold text-white`}
-                >
+                  className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full ${numberBg} font-heading text-[10px] font-bold text-white`}>
                   {i + 1}
                 </span>
                 <h4 className="font-heading text-[13px] font-bold leading-tight text-black sm:text-[14px]">

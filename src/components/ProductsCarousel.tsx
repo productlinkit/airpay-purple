@@ -29,7 +29,7 @@ const products: Product[] = [
     accent: "purple",
   },
   {
-    name: "Digital Payment (Merchant Aggregator)",
+    name: "Digital Payments",
     description:
       "Accept payments through multiple methods and local rails with a single integration.",
     illustration: "/images/illustration/payment_illustration.webp",
