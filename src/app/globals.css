@@ -7,8 +7,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-mplus-rounded), ui-rounded, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
 
   /* airpay brand colors */
   --color-tpay-purple: #8169FF;
@@ -95,8 +95,12 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
   font-weight: 700;
+}
+
+.font-heading {
+  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif !important;
 }
 
 @keyframes fade-in {

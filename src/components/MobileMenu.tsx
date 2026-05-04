@@ -127,10 +127,10 @@ export function MobileMenu({ size = "md" }: MobileMenuProps) {
                   onClick={close}
                   className="transition-transform hover:scale-105">
                   <Image
-                    src="/images/logo_airpay.webp"
+                    src="/images/airpay-logo.svg"
                     alt="Airpay"
-                    width={120}
-                    height={36}
+                    width={394}
+                    height={116}
                     className="h-auto w-[110px]"
                   />
                 </Link>

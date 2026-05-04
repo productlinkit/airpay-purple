@@ -8,6 +8,7 @@ import { Footer } from "@/components/Footer";
 import { ContactCTA } from "@/components/ContactCTA";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { WhyChooseCard } from "@/components/WhyChooseCard";
+import { AirpayForBusiness } from "@/components/AirpayForBusiness";
 import { products, getProductBySlug } from "@/lib/products";
 
 export function generateStaticParams() {
@@ -200,6 +201,9 @@ export default async function ProductPage({
             <WhyChooseCard cols={2} />
           </ScrollReveal>
         </section>
+
+        {/* Airpay for Business — Digital Payments only */}
+        {product.slug === "digital-payments" && <AirpayForBusiness />}
 
         {/* Other products */}
         <section className="mt-4 px-4 sm:px-6 lg:mt-6 lg:px-20">

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { M_PLUS_Rounded_1c, Nunito } from "next/font/google";
+import { Plus_Jakarta_Sans, Nunito } from "next/font/google";
 import "./globals.css";
 
-const mplusRounded = M_PLUS_Rounded_1c({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "700", "800", "900"],
-  variable: "--font-mplus-rounded",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-plus-jakarta",
   display: "swap",
 });
 
@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${mplusRounded.variable} ${nunito.variable} h-full antialiased`}
+      className={`${plusJakartaSans.variable} ${nunito.variable} h-full antialiased`}
     >
       <body className="min-h-full overflow-x-hidden flex flex-col">
         {children}

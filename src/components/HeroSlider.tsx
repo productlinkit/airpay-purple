@@ -86,11 +86,11 @@ export function HeroSlider() {
         >
           <Link href="/" className="transition-transform hover:scale-105">
             <Image
-              src="/images/logo_airpay.webp"
+              src="/images/airpay-logo.svg"
               alt="Airpay"
-              width={170}
-              height={50}
-              className="h-auto w-[100px] sm:w-[140px] lg:w-[160px]"
+              width={394}
+              height={116}
+              className="h-auto w-[110px] sm:w-[140px] lg:w-[160px]"
               priority
             />
           </Link>

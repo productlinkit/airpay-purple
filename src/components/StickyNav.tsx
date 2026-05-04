@@ -36,11 +36,12 @@ export function StickyNav({ alwaysVisible = false }: StickyNavProps) {
       <div className="pointer-events-auto flex w-full items-center justify-between rounded-full bg-white py-2.5 pl-5 pr-2.5 shadow-[0_18px_50px_rgba(80,60,180,0.22)] sm:py-3 sm:pl-6 sm:pr-3 lg:hidden">
         <Link href="/" className="transition-transform hover:scale-105">
           <Image
-            src="/images/logo_airpay.webp"
+            src="/images/airpay-logo.svg"
             alt="Airpay"
-            width={140}
-            height={40}
-            className="h-auto w-[110px] sm:w-[120px]"
+            width={394}
+            height={116}
+            className="h-auto w-[100px] sm:w-[110px]"
+            priority
           />
         </Link>
         <MobileMenu size="sm" />
@@ -50,11 +51,12 @@ export function StickyNav({ alwaysVisible = false }: StickyNavProps) {
       <div className="pointer-events-auto hidden items-center gap-8 rounded-full bg-white py-3 pl-6 pr-3 shadow-[0_18px_50px_rgba(80,60,180,0.22)] lg:flex">
         <Link href="/" className="mr-3 transition-transform hover:scale-105">
           <Image
-            src="/images/logo_airpay.webp"
+            src="/images/airpay-logo.svg"
             alt="Airpay"
-            width={140}
-            height={40}
+            width={394}
+            height={116}
             className="h-auto w-[120px]"
+            priority
           />
         </Link>
 
