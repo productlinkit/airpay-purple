@@ -138,7 +138,7 @@ export function NewsCTA() {
               <FlowColumn
                 accent="pink"
                 headerIcon={CreditCard}
-                title="Digital Payment (Merchant Aggregator)"
+                title="Digital Payment"
                 subtitle="Accept payments via multiple methods and channels."
                 steps={digitalSteps}
               />

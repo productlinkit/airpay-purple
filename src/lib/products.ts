@@ -114,7 +114,7 @@ export const products: ProductDetail[] = [
     tagline: "Accept payments and send payouts globally.",
     description:
       "Accept payments and send payouts globally with a single API. Airpay supports multiple payment methods and local rails, helping businesses scale faster and expand into new markets seamlessly.",
-    illustration: "/images/illustration/illustration05.webp",
+    illustration: "/images/illustration/illustration_dashboard.webp",
     icon: Wallet,
     highlights: ["Multiple payment methods", "Pay-in & Pay-out", "Local rails"],
     features: [
