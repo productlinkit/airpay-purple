@@ -77,10 +77,10 @@ export function Footer() {
         {/* Logo + socials column */}
         <div>
           <Image
-            src="/images/airpay-logo.svg"
+            src="/images/airpay-logo.png"
             alt="Airpay logo"
-            width={394}
-            height={116}
+            width={1000}
+            height={284}
             className="h-auto w-[150px] brightness-0 invert"
           />
           <div className="mt-6 flex gap-3">
