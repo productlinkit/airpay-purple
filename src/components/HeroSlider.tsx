@@ -39,15 +39,15 @@ type Slide =
   | { kind: "aggregator" };
 
 const slides: Slide[] = [
-  { kind: "dcb" },
-  { kind: "aggregator" },
   {
     kind: "legacy",
     title: "Powering Global Digital Payments with One Integration",
     body: "Airpay is a global digital payments platform that enables merchants to accept payments through Direct Carrier Billing and multiple payment methods worldwide with a single integration.",
-    image: "/images/illustration/illustration01.webp",
+    image: "/images/photos/women_hero.webp",
     buttonText: "Get Started",
   },
+  { kind: "dcb" },
+  { kind: "aggregator" },
 ];
 
 export function HeroSlider() {

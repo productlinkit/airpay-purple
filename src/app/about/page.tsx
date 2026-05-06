@@ -111,18 +111,13 @@ export default function AboutPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={120} className="lg:col-span-1">
-            <div
-              className="relative flex h-full min-h-[320px] items-center justify-center overflow-hidden rounded-[24px] p-6 sm:min-h-[460px] lg:rounded-[30px]"
-              style={{
-                background: "linear-gradient(135deg, #8169FF 0%, #A486FF 100%)",
-              }}>
-              <span className="pointer-events-none absolute -top-20 -right-20 h-56 w-56 rounded-full bg-white/15 blur-3xl" />
+            <div className="relative h-full min-h-[320px] overflow-hidden rounded-[24px] sm:min-h-[460px] lg:rounded-[30px]">
               <Image
-                src="/images/illustration/illustration10.webp"
-                alt="Airpay platform"
-                width={460}
-                height={460}
-                className="relative h-auto max-h-[90%] w-auto max-w-[90%] object-contain"
+                src="/images/photos/team.webp"
+                alt="Airpay team"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 33vw, 100vw"
               />
             </div>
           </ScrollReveal>

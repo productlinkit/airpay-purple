@@ -197,9 +197,9 @@ export function NewsCTA() {
           </ul>
 
           {/* Bottom illustration — enlarged & pulled up */}
-          <div className="relative mt-4 h-[260px] w-full overflow-hidden sm:mt-6 sm:h-[300px] lg:h-[340px]">
+          <div className="relative mt-4 h-[260px] w-full overflow-hidden rounded-[24px] sm:mt-6 sm:h-[300px] sm:rounded-[28px] lg:h-[340px] lg:rounded-[32px]">
             <Image
-              src="/images/illustration/illustration07.webp"
+              src="/images/photos/payment-photo.webp"
               alt="Airpay infrastructure"
               width={640}
               height={640}
