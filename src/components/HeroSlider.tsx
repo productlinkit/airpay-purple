@@ -8,20 +8,11 @@ import {
   ChevronRight,
   ArrowRight,
   User as UserIcon,
-  RadioTower,
-  Smartphone,
   CreditCard as CardIcon,
   Users,
   BarChart3,
-  Wallet,
-  QrCode,
-  CalendarClock,
-  Store,
-  Landmark,
-  TrendingUp,
   Globe,
   ShieldCheck,
-  Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Nav, GetStartedButton } from "./Nav";
@@ -248,116 +239,68 @@ const DCB_TRUST_LOGOS = [
   "/images/telco/etisalat.png",
 ];
 
-const DCB_BENEFITS: { icon: typeof UserIcon; title: string; subtitle: string }[] =
-  [
-    {
-      icon: TrendingUp,
-      title: "Higher Conversion",
-      subtitle: "Increase conversion\nup to 30%",
-    },
-    {
-      icon: Globe,
-      title: "Wider Reach",
-      subtitle: "Access billions of\nmobile users",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Secure & Reliable",
-      subtitle: "Enterprise-grade security\nand 99.9% uptime",
-    },
-    {
-      icon: Zap,
-      title: "Instant Settlement",
-      subtitle: "Fast and reliable\npayouts",
-    },
-  ];
-
 function DCBSlide() {
   return (
-    <div className="absolute inset-0 px-5 pb-[80px] pt-[80px] sm:px-10 sm:pb-[210px] sm:pt-[120px] lg:pb-[210px] lg:pl-20 lg:pr-12 lg:pt-[130px]">
-      <div className="grid h-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.4fr)] lg:gap-8">
-        {/* ── Left column ── */}
-        <div className="relative z-20 flex flex-col">
-          <span className="inline-flex w-fit items-center rounded-full bg-[#8169FF]/25 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-[#5a3fdb] backdrop-blur-sm sm:px-4 sm:py-1.5 sm:text-[11px]">
-            DCB &amp; Merchant Aggregator Platform
+    <div className="absolute inset-0">
+      {/* ── Background photo — full right side, behind cards ── */}
+      <div className="absolute inset-y-0 right-0 z-0 hidden w-[55%] sm:block">
+        <Image
+          src="/images/photos/image_slide_2.webp"
+          alt="Direct Carrier Billing"
+          fill
+          priority
+          className="object-cover object-right drop-shadow-[0_18px_40px_rgba(80,60,180,0.25)]"
+        />
+      </div>
+
+      {/* ── Left column text content ── */}
+      <div className="relative z-20 flex h-full w-full flex-col px-5 pb-[80px] pt-[80px] sm:w-3/4 sm:px-10 sm:pb-[210px] sm:pt-[120px] lg:w-1/2 lg:pb-[210px] lg:pl-20 lg:pr-8 lg:pt-[130px]">
+        <span className="inline-flex w-fit items-center rounded-full bg-[#8169FF]/25 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-[#5a3fdb] backdrop-blur-sm sm:px-4 sm:py-1.5 sm:text-[11px]">
+          DCB &amp; Merchant Aggregator Platform
+        </span>
+
+        <h2 className="mt-4 font-heading text-[26px] font-extrabold leading-[1.05] tracking-tight text-black sm:mt-5 sm:text-[44px] lg:text-[56px]">
+          Direct Carrier Billing
+          <br />
+          made{" "}
+          <span className="bg-gradient-to-r from-[#FF6FB5] to-[#FF8AA9] bg-clip-text text-transparent">
+            simple
           </span>
+        </h2>
 
-          <h2 className="mt-4 font-heading text-[26px] font-extrabold leading-[1.05] tracking-tight text-black sm:mt-5 sm:text-[44px] lg:text-[56px]">
-            Direct Carrier Billing
-            <br />
-            made{" "}
-            <span className="bg-gradient-to-r from-[#FF6FB5] to-[#FF8AA9] bg-clip-text text-transparent">
-              simple
+        <p className="mt-3 max-w-[480px] text-[13px] leading-relaxed text-[#2b2f38] sm:mt-5 sm:text-[15px] lg:text-[16px]">
+          Enable mobile payments through Direct Carrier Billing. Reach more
+          users, increase conversions, and grow your revenue across emerging
+          markets.
+        </p>
+
+        <div className="mt-5 flex flex-wrap items-center gap-2 sm:mt-7">
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-3 rounded-full bg-[#8169FF] py-1.5 pl-5 pr-1.5 text-[13px] font-bold text-white transition-all hover:scale-105 hover:shadow-[0_10px_28px_rgba(128,105,255,0.4)] sm:py-2 sm:pl-6 sm:pr-2 sm:text-[14px]"
+          >
+            Start Integration
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#8169FF] transition-transform group-hover:translate-x-1 sm:h-8 sm:w-8">
+              <ArrowRight className="h-4 w-4" />
             </span>
-          </h2>
-
-          <p className="mt-3 max-w-[480px] text-[13px] leading-relaxed text-[#2b2f38] sm:mt-5 sm:text-[15px] lg:text-[16px]">
-            Enable mobile payments through Direct Carrier Billing. Reach more
-            users, increase conversions, and grow your revenue across emerging
-            markets.
-          </p>
-
-          <div className="mt-5 flex flex-wrap items-center gap-2 sm:mt-7">
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-3 rounded-full bg-[#8169FF] py-1.5 pl-5 pr-1.5 text-[13px] font-bold text-white transition-all hover:scale-105 hover:shadow-[0_10px_28px_rgba(128,105,255,0.4)] sm:py-2 sm:pl-6 sm:pr-2 sm:text-[14px]"
-            >
-              Start Integration
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#8169FF] transition-transform group-hover:translate-x-1 sm:h-8 sm:w-8">
-                <ArrowRight className="h-4 w-4" />
-              </span>
-            </Link>
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-2 px-2 py-2 text-[13px] font-bold text-[#2b2f38] transition-colors hover:text-[#8169FF] sm:px-3 sm:text-[14px]"
-            >
-              Talk to Sales
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-
-          <div className="mt-auto grid max-w-[520px] grid-cols-3 gap-2 pt-5 sm:gap-4 sm:pt-6">
-            <DCBLeftFeature icon={CardIcon} title="No card" subtitle="required" />
-            <DCBLeftFeature icon={Users} title="Reach" subtitle="unbanked users" />
-            <DCBLeftFeature
-              icon={BarChart3}
-              title="Works across"
-              subtitle="telco operators"
-            />
-          </div>
+          </Link>
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-2 px-2 py-2 text-[13px] font-bold text-[#2b2f38] transition-colors hover:text-[#8169FF] sm:px-3 sm:text-[14px]"
+          >
+            Talk to Sales
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
 
-        {/* ── Right column ── */}
-        <div className="relative z-10 hidden flex-col gap-5 lg:flex">
-          <DCBFlow />
-
-          {/* Benefits pill row */}
-          <div className="rounded-[24px] bg-white/55 px-5 py-4 backdrop-blur-md ring-1 ring-white/40">
-            <div className="grid grid-cols-4 gap-1">
-              {DCB_BENEFITS.map((b, i) => (
-                <div
-                  key={b.title}
-                  className={cn(
-                    "flex items-start gap-2.5 px-2",
-                    i < DCB_BENEFITS.length - 1 &&
-                      "border-r border-[#8169FF]/15"
-                  )}
-                >
-                  <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-xl bg-[#8169FF]/15 text-[#5a3fdb]">
-                    <b.icon className="h-4 w-4" />
-                  </span>
-                  <div className="leading-tight">
-                    <div className="text-[12px] font-bold text-black">
-                      {b.title}
-                    </div>
-                    <div className="mt-0.5 whitespace-pre-line text-[10px] text-[#2b2f38]/80">
-                      {b.subtitle}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="mt-auto grid max-w-[520px] grid-cols-3 gap-2 pt-5 sm:gap-4 sm:pt-6">
+          <DCBLeftFeature icon={CardIcon} title="No card" subtitle="required" />
+          <DCBLeftFeature icon={Users} title="Reach" subtitle="unbanked users" />
+          <DCBLeftFeature
+            icon={BarChart3}
+            title="Works across"
+            subtitle="telco operators"
+          />
         </div>
       </div>
 
@@ -430,94 +373,6 @@ function TrustStat({ value, label }: { value: string; label: string }) {
   );
 }
 
-function DCBFlow() {
-  return (
-    <div className="relative flex flex-1 items-center justify-center">
-      <div className="flex w-full items-center justify-center">
-        <DCBStep
-          icon={UserIcon}
-          title="User"
-          subtitle="Chooses to pay&#10;via mobile billing"
-        />
-        <DCBArrow />
-        {/* Center AirPay card */}
-        <div className="relative z-10 mx-1 flex h-[280px] w-[160px] flex-col items-center justify-center rounded-[28px] bg-gradient-to-b from-[#8169FF] to-[#9F84FF] p-5 text-white shadow-[0_24px_60px_rgba(80,60,180,0.5)] ring-[3px] ring-white/50">
-          <span className="pointer-events-none absolute inset-2 rounded-[24px] ring-1 ring-white/30" />
-          <div className="relative flex h-14 w-14 items-center justify-center">
-            <span className="font-heading text-[44px] font-extrabold leading-none">
-              A
-            </span>
-            <span className="absolute bottom-[8px] left-1/2 h-[6px] w-[6px] -translate-x-1/2 rounded-full bg-[#FF6FB5]" />
-          </div>
-          <div className="mt-2 font-heading text-[20px] font-extrabold">
-            AirPay
-          </div>
-          <div className="mt-5 text-center text-[12px] font-bold leading-tight">
-            AirPay API
-          </div>
-          <div className="mt-2 text-center text-[10px] leading-snug opacity-95">
-            Single integration
-            <br />
-            for all operators
-          </div>
-        </div>
-        <DCBArrow />
-        <DCBStep
-          icon={RadioTower}
-          title="Telco Operators"
-          subtitle="Connects to multiple&#10;mobile operators"
-        />
-        <DCBArrow />
-        <DCBStep
-          icon={Smartphone}
-          title={"Charged to\nMobile Balance"}
-          subtitle="Payment successful"
-          badge
-        />
-      </div>
-    </div>
-  );
-}
-
-function DCBStep({
-  icon: Icon,
-  title,
-  subtitle,
-  badge = false,
-}: {
-  icon: typeof UserIcon;
-  title: string;
-  subtitle: string;
-  badge?: boolean;
-}) {
-  return (
-    <div className="flex h-[210px] w-[125px] flex-col items-center justify-start rounded-2xl bg-white/90 p-3 shadow-[0_10px_30px_rgba(80,60,180,0.2)] backdrop-blur-sm">
-      <span className="relative mt-2 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#A486FF]/20 text-[#5a3fdb]">
-        <Icon className="h-7 w-7" />
-        {badge && (
-          <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#5a3fdb] text-[9px] font-bold text-white">
-            ✓
-          </span>
-        )}
-      </span>
-      <div className="mt-4 whitespace-pre-line text-center font-heading text-[13px] font-bold leading-tight text-black">
-        {title}
-      </div>
-      <div className="mt-2 whitespace-pre-line text-center text-[10px] leading-snug text-[#2b2f38]/80">
-        {subtitle}
-      </div>
-    </div>
-  );
-}
-
-function DCBArrow() {
-  return (
-    <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-white text-[#5a3fdb] shadow-md">
-      <ArrowRight className="h-4 w-4" />
-    </span>
-  );
-}
-
 /* ──────────────────────── Slide 3 — Aggregator hub ──────────────────────── */
 
 const AGG_TRUST_LOGOS = [
@@ -529,53 +384,57 @@ const AGG_TRUST_LOGOS = [
 
 function AggregatorSlide() {
   return (
-    <div className="absolute inset-0 px-5 pb-[80px] pt-[80px] sm:px-10 sm:pb-[210px] sm:pt-[120px] lg:pb-[210px] lg:pl-20 lg:pr-12 lg:pt-[130px]">
-      <div className="grid h-full grid-cols-1 gap-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.4fr)] lg:gap-8">
-        {/* ── Left column ── */}
-        <div className="relative z-20 flex flex-col justify-center">
-          <span className="inline-flex w-fit items-center rounded-full bg-[#8169FF]/25 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-[#5a3fdb] backdrop-blur-sm sm:px-4 sm:py-1.5 sm:text-[11px]">
-            Merchant Aggregator Platform
+    <div className="absolute inset-0">
+      {/* ── Background photo — full right side, behind cards ── */}
+      <div className="absolute inset-y-0 right-0 z-0 hidden w-[55%] sm:block">
+        <Image
+          src="/images/photos/image_slide_3.webp"
+          alt="Digital Payments"
+          fill
+          priority
+          className="object-cover object-right drop-shadow-[0_18px_40px_rgba(80,60,180,0.25)]"
+        />
+      </div>
+
+      {/* ── Left column text content ── */}
+      <div className="relative z-20 flex h-full w-full flex-col justify-center px-5 pb-[80px] pt-[80px] sm:w-3/4 sm:px-10 sm:pb-[210px] sm:pt-[120px] lg:w-1/2 lg:pb-[210px] lg:pl-20 lg:pr-8 lg:pt-[130px]">
+        <span className="inline-flex w-fit items-center rounded-full bg-[#8169FF]/25 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-[#5a3fdb] backdrop-blur-sm sm:px-4 sm:py-1.5 sm:text-[11px]">
+          Merchant Aggregator Platform
+        </span>
+
+        <h2 className="mt-4 font-heading text-[24px] font-extrabold leading-[1.08] tracking-tight text-black sm:mt-5 sm:text-[42px] lg:text-[52px]">
+          One Integration,
+          <br />
+          All Payment Methods
+          <br />
+          <span className="bg-gradient-to-r from-[#7E5BFF] via-[#B47BFF] to-[#FF7DB6] bg-clip-text text-transparent">
+            More Growth
           </span>
+        </h2>
 
-          <h2 className="mt-4 font-heading text-[24px] font-extrabold leading-[1.08] tracking-tight text-black sm:mt-5 sm:text-[42px] lg:text-[52px]">
-            One Integration,
-            <br />
-            All Payment Methods
-            <br />
-            <span className="bg-gradient-to-r from-[#7E5BFF] via-[#B47BFF] to-[#FF7DB6] bg-clip-text text-transparent">
-              More Growth
+        <p className="mt-3 max-w-[480px] text-[13px] leading-relaxed text-[#2b2f38] sm:mt-5 sm:text-[15px] lg:text-[16px]">
+          Airpay connects you to 100+ payment channels including e-wallets,
+          bank transfers, QR payments, cards, and more. Accept payments easily
+          and scale your business globally.
+        </p>
+
+        <div className="mt-5 flex flex-wrap items-center gap-2 sm:mt-7">
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-3 rounded-full bg-[#8169FF] py-1.5 pl-5 pr-1.5 text-[13px] font-bold text-white transition-all hover:scale-105 hover:shadow-[0_10px_28px_rgba(128,105,255,0.4)] sm:py-2 sm:pl-6 sm:pr-2 sm:text-[14px]"
+          >
+            Get Started
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#8169FF] transition-transform group-hover:translate-x-1 sm:h-8 sm:w-8">
+              <ArrowRight className="h-4 w-4" />
             </span>
-          </h2>
-
-          <p className="mt-3 max-w-[480px] text-[13px] leading-relaxed text-[#2b2f38] sm:mt-5 sm:text-[15px] lg:text-[16px]">
-            Airpay connects you to 100+ payment channels including e-wallets,
-            bank transfers, QR payments, cards, and more. Accept payments easily
-            and scale your business globally.
-          </p>
-
-          <div className="mt-5 flex flex-wrap items-center gap-2 sm:mt-7">
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-3 rounded-full bg-[#8169FF] py-1.5 pl-5 pr-1.5 text-[13px] font-bold text-white transition-all hover:scale-105 hover:shadow-[0_10px_28px_rgba(128,105,255,0.4)] sm:py-2 sm:pl-6 sm:pr-2 sm:text-[14px]"
-            >
-              Get Started
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#8169FF] transition-transform group-hover:translate-x-1 sm:h-8 sm:w-8">
-                <ArrowRight className="h-4 w-4" />
-              </span>
-            </Link>
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-2 px-2 py-2 text-[13px] font-bold text-[#2b2f38] transition-colors hover:text-[#8169FF] sm:px-3 sm:text-[14px]"
-            >
-              Talk to Sales
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-        </div>
-
-        {/* ── Right hub-and-spoke ── */}
-        <div className="relative z-10 hidden items-center justify-center lg:flex">
-          <AggregatorHub />
+          </Link>
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-2 px-2 py-2 text-[13px] font-bold text-[#2b2f38] transition-colors hover:text-[#8169FF] sm:px-3 sm:text-[14px]"
+          >
+            Talk to Sales
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
       </div>
 
@@ -660,102 +519,3 @@ function AggIconStat({
   );
 }
 
-function AggregatorHub() {
-  // Hub canvas: 540 x 500, center (270, 250).
-  // 8 tiles evenly spaced at 45° around an ellipse (rx=210, ry=200).
-  // Tile size 120x100 — top-left position = tile-center - (60, 50).
-  type Tile = {
-    label: string;
-    icon?: typeof UserIcon;
-    custom?: "VA";
-    /** tile-center coords on the 540x500 canvas */
-    cx: number;
-    cy: number;
-  };
-
-  const tiles: Tile[] = [
-    { label: "E-Wallets",          icon: Wallet,        cx: 270, cy: 50  }, // top
-    { label: "QR Payments",        icon: QrCode,        cx: 419, cy: 109 }, // top-right
-    { label: "Cards",              icon: CardIcon,      cx: 480, cy: 250 }, // right
-    { label: "PayLater",           icon: CalendarClock, cx: 419, cy: 391 }, // bottom-right
-    { label: "Retail Outlets",     icon: Store,         cx: 270, cy: 450 }, // bottom
-    { label: "Virtual Accounts",   custom: "VA",        cx: 122, cy: 391 }, // bottom-left
-    { label: "Direct Carrier\nBilling", icon: Smartphone, cx: 60, cy: 250 }, // left
-    { label: "Bank Transfer",      icon: Landmark,      cx: 122, cy: 109 }, // top-left
-  ];
-
-  return (
-    <div className="relative h-[500px] w-[540px]">
-      {/* Dashed connector lines from center to each tile */}
-      <svg
-        className="pointer-events-none absolute inset-0 h-full w-full"
-        viewBox="0 0 540 500"
-        fill="none"
-      >
-        {tiles.map((t) => (
-          <line
-            key={t.label}
-            x1="270"
-            y1="250"
-            x2={t.cx}
-            y2={t.cy}
-            stroke="#8169FF"
-            strokeWidth="1.5"
-            strokeDasharray="4 6"
-            opacity="0.55"
-          />
-        ))}
-      </svg>
-
-      {/* Decorative dots */}
-      <span className="absolute left-[40%] top-[8%] h-2 w-2 rounded-full bg-[#FF7DB6]/70" />
-      <span className="absolute right-[6%] top-[40%] h-2 w-2 rounded-full bg-[#FFFFFF]/70" />
-      <span className="absolute left-[6%] top-[58%] h-2.5 w-2.5 rounded-full bg-[#FF7DB6]/60" />
-      <span className="absolute right-[12%] bottom-[12%] h-2 w-2 rounded-full bg-[#FF7DB6]/70" />
-
-      {/* Center AirPay disc */}
-      <div className="absolute left-1/2 top-1/2 z-10 h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2">
-        <div className="relative h-full w-full rounded-full bg-gradient-to-br from-[#7E5BFF] to-[#B89BFF] p-[6px] shadow-[0_24px_60px_rgba(80,60,180,0.45)] ring-[3px] ring-white/60">
-          <div className="flex h-full w-full flex-col items-center justify-center rounded-full bg-gradient-to-br from-[#7E5BFF] via-[#9F7CFF] to-[#B89BFF] text-white">
-            <div className="relative flex h-12 w-12 items-center justify-center">
-              <span className="font-heading text-[36px] font-extrabold leading-none">
-                A
-              </span>
-              <span className="absolute bottom-[6px] left-1/2 h-[5px] w-[5px] -translate-x-1/2 rounded-full bg-[#FF6FB5]" />
-            </div>
-            <div className="mt-1 font-heading text-[18px] font-extrabold">
-              AirPay
-            </div>
-            <div className="mt-1 text-[10px] font-semibold opacity-95">
-              Your Business
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Spoke tiles */}
-      {tiles.map((t) => (
-        <div
-          key={t.label}
-          style={{ top: t.cy - 50, left: t.cx - 60 }}
-          className="absolute z-20 flex h-[100px] w-[120px] flex-col items-center justify-center rounded-2xl bg-white/95 p-2 text-center shadow-[0_10px_30px_rgba(80,60,180,0.2)] backdrop-blur-sm transition-transform hover:-translate-y-1 hover:shadow-[0_14px_36px_rgba(80,60,180,0.3)]"
-        >
-          {t.custom === "VA" ? (
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#8169FF] to-[#A486FF] font-heading text-[13px] font-extrabold text-white shadow-[0_4px_12px_rgba(80,60,180,0.3)]">
-              VA
-            </span>
-          ) : (
-            t.icon && (
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#A486FF]/20 text-[#5a3fdb]">
-                <t.icon className="h-5 w-5" />
-              </span>
-            )
-          )}
-          <span className="mt-2 whitespace-pre-line text-[11px] font-semibold leading-tight text-black">
-            {t.label}
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-}
