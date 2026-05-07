@@ -13,7 +13,11 @@ export function PageHero({ eyebrow, title, description }: PageHeroProps) {
         <div
           className="relative overflow-hidden rounded-[24px] px-6 py-12 text-white sm:rounded-[32px] sm:px-10 sm:py-16 lg:rounded-[40px] lg:px-14 lg:py-20"
           style={{
-            background: "linear-gradient(135deg, #9EC6FE 0%, #A486FF 100%)",
+            backgroundImage:
+              "linear-gradient(135deg, rgba(158,198,254,0.55) 0%, rgba(164,134,255,0.65) 100%), url('/images/photos/bg_custom.webp')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         >
           <span className="pointer-events-none absolute -top-32 -right-24 h-72 w-72 rounded-full bg-white/15 blur-3xl" />

@@ -48,7 +48,7 @@ export default async function ProductPage({
         <section className="px-4 pt-28 sm:px-6 sm:pt-32 lg:px-20">
           <ScrollReveal>
             <div
-              className="relative overflow-hidden rounded-[24px] p-6 sm:p-10 lg:rounded-[40px] lg:p-14"
+              className="relative overflow-hidden rounded-[24px] lg:rounded-[40px]"
               style={{
                 background:
                   "linear-gradient(135deg, #9EC6FE 0%, #A486FF 100%)",
@@ -57,8 +57,8 @@ export default async function ProductPage({
               <span className="pointer-events-none absolute -top-32 -right-24 h-72 w-72 rounded-full bg-white/15 blur-3xl" />
               <span className="pointer-events-none absolute -bottom-32 -left-16 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
 
-              <div className="relative grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-10">
-                <div>
+              <div className="relative grid grid-cols-1 items-stretch gap-0 lg:grid-cols-[1.2fr_1fr]">
+                <div className="p-6 sm:p-10 lg:py-14 lg:pl-14 lg:pr-8">
                   <div className="inline-flex items-center gap-2 rounded-full bg-white/25 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-black backdrop-blur-sm sm:px-4 sm:text-[12px]">
                     <product.icon className="h-3.5 w-3.5" />
                     {product.eyebrow}
@@ -104,13 +104,14 @@ export default async function ProductPage({
                   </div>
                 </div>
 
-                <div className="relative h-[260px] sm:h-[340px] lg:h-[420px]">
+                <div className="relative h-[280px] w-full sm:h-[360px] lg:h-[520px]">
                   <Image
                     src={product.illustration}
                     alt={product.name}
                     fill
                     priority
-                    className="object-contain drop-shadow-[0_18px_40px_rgba(80,60,180,0.25)]"
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 45vw, 100vw"
                   />
                 </div>
               </div>

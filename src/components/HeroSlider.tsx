@@ -43,7 +43,7 @@ const slides: Slide[] = [
     kind: "legacy",
     title: "Powering Global Digital Payments with One Integration",
     body: "Airpay is a global digital payments platform that enables merchants to accept payments through Direct Carrier Billing and multiple payment methods worldwide with a single integration.",
-    image: "/images/photos/women_hero.webp",
+    image: "/images/photos/image_hero.webp",
     buttonText: "Get Started",
   },
   { kind: "dcb" },

@@ -51,7 +51,7 @@ export const products: ProductDetail[] = [
     tagline: "Let users pay through their phone bill.",
     description:
       "Enable mobile carrier billing and let users pay directly through their mobile phone bills. With one integration, access multiple telecom operators and unlock new revenue opportunities across global markets.",
-    illustration: "/images/illustration/illustration02.webp",
+    illustration: "/images/photos/image_dcb.webp",
     icon: Radio,
     highlights: ["100+ telco operators", "20+ countries", "No card required"],
     features: [
@@ -114,33 +114,33 @@ export const products: ProductDetail[] = [
     tagline: "Accept payments and send payouts globally.",
     description:
       "Accept payments and send payouts globally with a single API. Airpay supports multiple payment methods and local rails, helping businesses scale faster and expand into new markets seamlessly.",
-    illustration: "/images/illustration/illustration_dashboard.webp",
+    illustration: "/images/photos/image_payment.webp",
     icon: Wallet,
     highlights: ["Multiple payment methods", "Pay-in & Pay-out", "Local rails"],
     features: [
       {
         icon: Wallet,
-        title: "Wallets, cards, bank transfer",
+        title: "Unified Payment Infrastructure",
         description:
-          "Aggregate every popular method per market through a single integration.",
+          "Enable seamless payment acceptance across QRIS, e-wallets, virtual accounts, cards, and bank transfers through a single integration.",
       },
       {
         icon: Repeat,
-        title: "Pay-out at scale",
+        title: "Scalable Payout Network",
         description:
-          "Send payouts to bank accounts and wallets with automatic reconciliation.",
+          "Automate and streamline payouts to banks and digital wallets with enterprise-grade reliability.",
       },
       {
         icon: Zap,
-        title: "Real-time settlement",
+        title: "Real-Time Transaction Flow",
         description:
-          "Faster cash flow with near-instant settlement on supported rails.",
+          "Monitor payment activity, settlement status, and transaction performance with real-time visibility.",
       },
       {
         icon: ShieldCheck,
-        title: "PCI-DSS & 3DS",
+        title: "Enterprise Security & Compliance",
         description:
-          "Bank-grade compliance, tokenization, and fraud screening included.",
+          "Built with PCI-DSS standards, intelligent fraud protection, tokenization, and secure authentication layers.",
       },
     ],
     steps: [
@@ -176,7 +176,7 @@ export const products: ProductDetail[] = [
     tagline: "Recurring billing without the headache.",
     description:
       "A complete billing infrastructure for subscriptions, invoicing, and reconciliation — built to handle complex pricing models, dunning, and tax across markets.",
-    illustration: "/images/illustration/illustration06.webp",
+    illustration: "/images/photos/image_billing.webp",
     icon: Database,
     highlights: ["Subscriptions", "Smart dunning", "Multi-currency"],
     features: [
@@ -226,7 +226,7 @@ export const products: ProductDetail[] = [
     tagline: "Payments at the counter, online-grade reporting.",
     description:
       "Modern EDC terminals and acquiring infrastructure for in-store payments — connected to the same dashboard and reporting your online channels use.",
-    illustration: "/images/illustration/illustration12.webp",
+    illustration: "/images/photos/image_edc.webp",
     icon: CreditCard,
     highlights: ["Acquiring", "QR & contactless", "Unified reporting"],
     features: [
@@ -276,7 +276,7 @@ export const products: ProductDetail[] = [
     tagline: "Move money across borders, on local rails.",
     description:
       "Send and receive payments across borders using local payment rails — better FX, lower fees, faster settlement than traditional correspondent banking.",
-    illustration: "/images/illustration/illustration09.webp",
+    illustration: "/images/photos/image_cross.webp",
     icon: Globe,
     highlights: ["50+ corridors", "Local rails", "Better FX"],
     features: [
