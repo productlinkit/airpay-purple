@@ -134,9 +134,9 @@ export default function AboutPage() {
                 Our Mission
               </h3>
               <p className="mt-3 text-[15px] leading-relaxed text-[#2b2f38]">
-                To remove friction from global payments — letting any merchant,
-                anywhere, accept and send money through a single, trusted
-                platform.
+                To empower businesses with secure, flexible, and scalable
+                payment infrastructure for carrier billing, collections,
+                payouts, and digital commerce.
               </p>
             </div>
           </ScrollReveal>
@@ -150,9 +150,9 @@ export default function AboutPage() {
                 Our Vision
               </h3>
               <p className="mt-3 text-[15px] leading-relaxed text-[#2b2f38]">
-                A world where every business has equal access to the same
-                payment infrastructure — regardless of size, geography, or
-                vertical.
+                To build a globally connected payment ecosystem where
+                businesses can access seamless digital financial infrastructure
+                without borders.
               </p>
             </div>
           </ScrollReveal>
