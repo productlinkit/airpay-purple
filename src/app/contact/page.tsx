@@ -23,14 +23,14 @@ const channels = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+XX XXX XXXX",
-    href: "https://wa.me/0000000000",
+    value: "+62 877-8158-4555",
+    href: "https://wa.me/6287781584555",
   },
   {
     icon: Phone,
     label: "Sales",
-    value: "+XX XXX XXXX",
-    href: "tel:+0000000000",
+    value: "+62 877-8158-4555",
+    href: "tel:+6287781584555",
   },
 ];
 
@@ -159,7 +159,7 @@ export default function ContactPage() {
                 <Field label="Country" placeholder="Where are you based?" />
                 <div className="sm:col-span-2">
                   <label className="mb-2 block text-[13px] font-bold text-black">
-                    What kind of product?
+                    Select your business solutions
                   </label>
                   <select
                     defaultValue=""
@@ -177,11 +177,11 @@ export default function ContactPage() {
                 </div>
                 <div className="sm:col-span-2">
                   <label className="mb-2 block text-[13px] font-bold text-black">
-                    What can we help with?
+                    How can we support your business?
                   </label>
                   <textarea
                     rows={5}
-                    placeholder="Tell us about your project — markets, payment methods, expected volumes…"
+                    placeholder="Tell us about your business needs, target markets, and expected transaction volumes"
                     className="w-full rounded-2xl border-2 border-transparent bg-white p-4 text-[14px] text-black outline-none transition-all placeholder:text-[#9ca3af] focus:border-[#8169FF] focus:shadow-[0_8px_24px_rgba(128,105,255,0.15)]"
                   />
                 </div>
@@ -285,7 +285,7 @@ export default function ContactPage() {
                   opportunities.
                 </p>
                 <a
-                  href="https://wa.me/0000000000"
+                  href="https://wa.me/6287781584555"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group mt-7 inline-flex items-center gap-3 rounded-full bg-white py-2 pl-7 pr-2 text-[15px] font-bold text-[#8169FF] transition-all hover:scale-105">

@@ -29,7 +29,7 @@ export function ContactForm() {
             <Field label="Country" placeholder="Where are you based?" />
             <div className="sm:col-span-2">
               <label className="mb-2 block text-[13px] font-bold text-black">
-                What kind of product?
+                Select your business solutions
               </label>
               <select
                 defaultValue=""
@@ -47,11 +47,11 @@ export function ContactForm() {
             </div>
             <div className="sm:col-span-2">
               <label className="mb-2 block text-[13px] font-bold text-black">
-                What can we help with?
+                How can we support your business?
               </label>
               <textarea
                 rows={5}
-                placeholder="Tell us about your project — markets, payment methods, expected volumes…"
+                placeholder="Tell us about your business needs, target markets, and expected transaction volumes"
                 className="w-full rounded-2xl border-2 border-transparent bg-white p-3.5 text-[13px] text-black outline-none transition-all placeholder:text-[#9ca3af] focus:border-[#8169FF] focus:shadow-[0_8px_24px_rgba(128,105,255,0.15)] sm:p-4 sm:text-[14px]"
               />
             </div>

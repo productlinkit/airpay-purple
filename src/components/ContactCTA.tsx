@@ -32,7 +32,7 @@ export function ContactCTA() {
 
             <div className="flex flex-col gap-4">
               <a
-                href="https://wa.me/0000000000"
+                href="https://wa.me/6287781584555"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between gap-6 rounded-2xl bg-white/15 p-5 backdrop-blur-md transition-all hover:bg-white hover:text-[#8169FF] hover:scale-[1.02]"
