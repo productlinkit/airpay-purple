@@ -45,7 +45,7 @@ export interface ProductDetail {
 export const products: ProductDetail[] = [
   {
     slug: "direct-carrier-billing",
-    name: "Direct Carrier Billing",
+    name: "Digital Carrier Billing",
     shortName: "DCB",
     eyebrow: "Carrier Billing",
     tagline: "Let users pay through their phone bill.",
@@ -108,15 +108,19 @@ export const products: ProductDetail[] = [
   },
   {
     slug: "digital-payments",
-    name: "Digital Payments — Pay-In & Pay-Out",
+    name: "Digital Payment Solutions",
     shortName: "Digital Payments",
     eyebrow: "Pay-In & Pay-Out",
-    tagline: "Accept payments and send payouts globally.",
+    tagline: "Modern pay-in and payout infrastructure for growing businesses.",
     description:
-      "Accept payments and send payouts globally with a single API. Airpay supports multiple payment methods and local rails, helping businesses scale faster and expand into new markets seamlessly.",
+      "Accept payments and manage payouts seamlessly through a unified platform supporting QRIS, virtual accounts, e-wallets, cards, bank transfers, and local payment rails.",
     illustration: "/images/photos/image_payment.webp",
     icon: Wallet,
-    highlights: ["Multiple payment methods", "Pay-in & Pay-out", "Local rails"],
+    highlights: [
+      "Multi-Channel Payments",
+      "Pay-In & Pay-Out",
+      "Fast & Secure Settlement",
+    ],
     features: [
       {
         icon: Wallet,

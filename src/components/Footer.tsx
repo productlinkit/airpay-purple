@@ -5,7 +5,7 @@ const footerColumns: { title: string; links: string[] }[] = [
   {
     title: "Solutions",
     links: [
-      "Direct Carrier Billing (DCB)",
+      "Digital Carrier Billing (DCB)",
       "Digital Payments (Pay-In & Pay-Out)",
       "Billing Infrastructure",
       "EDC Payment Solutions",

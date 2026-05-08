@@ -129,14 +129,14 @@ export function NewsCTA() {
               <FlowColumn
                 accent="purple"
                 headerIcon={RadioTower}
-                title="Direct Carrier Billing (DCB)"
+                title="Digital Carrier Billing (DCB)"
                 subtitle="Let users pay using their mobile balance."
                 steps={dcbSteps}
               />
             </ScrollReveal>
             <ScrollReveal delay={120}>
               <FlowColumn
-                accent="pink"
+                accent="purple"
                 headerIcon={CreditCard}
                 title="Digital Payment"
                 subtitle="Accept payments via multiple methods and channels."
@@ -199,7 +199,7 @@ export function NewsCTA() {
           {/* Bottom illustration — enlarged & pulled up */}
           <div className="relative mt-4 h-[260px] w-full overflow-hidden rounded-[24px] sm:mt-6 sm:h-[300px] sm:rounded-[28px] lg:h-[340px] lg:rounded-[32px]">
             <Image
-              src="/images/photos/payment-photo.webp"
+              src="/images/photos/image_scan.webp"
               alt="Airpay infrastructure"
               width={640}
               height={640}

@@ -16,10 +16,10 @@ interface Product {
 
 const products: Product[] = [
   {
-    name: "Direct Carrier Billing (DCB)",
+    name: "Digital Carrier Billing (DCB)",
     description:
       "Enable users to pay using their mobile balance. No card, no bank account needed.",
-    illustration: "/images/illustration/dcb_illustration.webp",
+    illustration: "/images/photos/image_card_dcb.webp",
     bullets: [
       "Higher conversion",
       "Reach unbanked users",
@@ -32,14 +32,14 @@ const products: Product[] = [
     name: "Digital Payments",
     description:
       "Accept payments through multiple methods and local rails with a single integration.",
-    illustration: "/images/illustration/payment_illustration.webp",
+    illustration: "/images/photos/image_card_payment.webp",
     bullets: [
       "100+ payment channels",
       "Global & local coverage",
       "Smart routing & higher success rate",
     ],
     href: "/products/digital-payment",
-    accent: "pink",
+    accent: "purple",
   },
 ];
 

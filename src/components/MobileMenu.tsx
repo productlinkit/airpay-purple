@@ -23,7 +23,7 @@ const items: MobileNavItem[] = [
     label: "Products",
     items: [
       {
-        label: "Direct Carrier Billing (DCB)",
+        label: "Digital Carrier Billing (DCB)",
         href: "/products/direct-carrier-billing",
       },
       {
@@ -48,7 +48,7 @@ const items: MobileNavItem[] = [
     label: "Developers",
     items: [
       {
-        label: "API for Direct Carrier Billing (DCB)",
+        label: "API for Digital Carrier Billing (DCB)",
         href: "/products/direct-carrier-billing",
       },
       { label: "API for Digital Payment", href: "/products/digital-payments" },

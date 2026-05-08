@@ -295,12 +295,12 @@ export default function ContactPage() {
                   </span>
                 </a>
               </div>
-              <div className="relative h-[280px] w-full sm:h-[360px] lg:h-[420px]">
+              <div className="relative h-[320px] w-full sm:h-[420px] lg:h-[520px]">
                 <Image
                   src="/images/photos/image_calendar.webp"
                   alt="Schedule a consultation"
                   fill
-                  className="object-cover"
+                  className="object-contain object-bottom"
                   sizes="(min-width: 1024px) 40vw, 100vw"
                 />
               </div>

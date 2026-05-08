@@ -33,7 +33,7 @@ const slides: Slide[] = [
   {
     kind: "legacy",
     title: "Powering Global Digital Payments with One Integration",
-    body: "Airpay is a global digital payments platform that enables merchants to accept payments through Direct Carrier Billing and multiple payment methods worldwide with a single integration.",
+    body: "Airpay is a global digital payments platform that enables merchants to accept payments through Digital Carrier Billing and multiple payment methods worldwide with a single integration.",
     image: "/images/photos/image_hero.webp",
     buttonText: "Get Started",
   },
@@ -246,7 +246,7 @@ function DCBSlide() {
       <div className="absolute inset-y-0 right-0 z-0 hidden w-[55%] sm:block">
         <Image
           src="/images/photos/image_slide_2.webp"
-          alt="Direct Carrier Billing"
+          alt="Digital Carrier Billing"
           fill
           priority
           className="object-cover object-right drop-shadow-[0_18px_40px_rgba(80,60,180,0.25)]"
@@ -260,7 +260,7 @@ function DCBSlide() {
         </span>
 
         <h2 className="mt-4 font-heading text-[26px] font-extrabold leading-[1.05] tracking-tight text-black sm:mt-5 sm:text-[44px] lg:text-[56px]">
-          Direct Carrier Billing
+          Digital Carrier Billing
           <br />
           made{" "}
           <span className="bg-gradient-to-r from-[#FF6FB5] to-[#FF8AA9] bg-clip-text text-transparent">
@@ -269,7 +269,7 @@ function DCBSlide() {
         </h2>
 
         <p className="mt-3 max-w-[480px] text-[13px] leading-relaxed text-[#2b2f38] sm:mt-5 sm:text-[15px] lg:text-[16px]">
-          Enable mobile payments through Direct Carrier Billing. Reach more
+          Enable mobile payments through Digital Carrier Billing. Reach more
           users, increase conversions, and grow your revenue across emerging
           markets.
         </p>
@@ -386,13 +386,13 @@ function AggregatorSlide() {
   return (
     <div className="absolute inset-0">
       {/* ── Background photo — full right side, behind cards ── */}
-      <div className="absolute inset-y-0 right-0 z-0 hidden w-[55%] sm:block">
+      <div className="absolute inset-y-0 right-0 z-0 hidden w-[60%] sm:block">
         <Image
           src="/images/photos/image_slide_3.webp"
           alt="Digital Payments"
           fill
           priority
-          className="object-cover object-right drop-shadow-[0_18px_40px_rgba(80,60,180,0.25)]"
+          className="object-contain object-right drop-shadow-[0_18px_40px_rgba(80,60,180,0.25)]"
         />
       </div>
 

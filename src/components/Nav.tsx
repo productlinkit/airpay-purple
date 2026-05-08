@@ -46,7 +46,7 @@ const productsMega: MegaConfig = {
   items: [
     {
       icon: Radio,
-      title: "Direct Carrier Billing (DCB)",
+      title: "Digital Carrier Billing (DCB)",
       description: "Let users pay via their phone bill",
       href: "/products/direct-carrier-billing",
     },
@@ -88,7 +88,7 @@ const developersMega: MegaConfig = {
   items: [
     {
       icon: Code2,
-      title: "API for Direct Carrier Billing (DCB)",
+      title: "API for Digital Carrier Billing (DCB)",
       description: "Integrate telco billing in one call",
       href: "/products/direct-carrier-billing",
     },

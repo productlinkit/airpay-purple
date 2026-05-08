@@ -83,7 +83,7 @@ export default function AboutPage() {
                 seamless transactions across both local and international
                 markets. With core solutions in{" "}
                 <strong className="font-bold text-[#8169FF]">
-                  Direct Carrier Billing (DCB)
+                  Digital Carrier Billing (DCB)
                 </strong>{" "}
                 and{" "}
                 <strong className="font-bold text-[#8169FF]">

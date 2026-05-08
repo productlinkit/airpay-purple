@@ -160,7 +160,7 @@ function PaymentFlowIllustration() {
         </div>
 
         <div className="mt-3 space-y-1.5">
-          <PaymentRow label="Direct Carrier Billing" brand="DCB" />
+          <PaymentRow label="Digital Carrier Billing" brand="DCB" />
           <PaymentRow label="BCA Virtual Account" highlighted brand="BCA" />
           <PaymentRow label="GoPay E-Wallet" brand="GoPay" />
           <PaymentRow label="QRIS" expandable />
