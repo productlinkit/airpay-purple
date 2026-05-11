@@ -8,10 +8,8 @@ export function ContactCTA() {
         <div
           className="relative overflow-hidden rounded-[24px] p-7 text-white sm:p-10 lg:rounded-[30px] lg:p-14"
           style={{
-            background:
-              "linear-gradient(135deg, #8169FF 0%, #A486FF 100%)",
-          }}
-        >
+            background: "linear-gradient(135deg, #8169FF 0%, #A486FF 100%)",
+          }}>
           {/* Decorative blobs */}
           <span className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
           <span className="pointer-events-none absolute -bottom-24 left-12 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
@@ -32,11 +30,10 @@ export function ContactCTA() {
 
             <div className="flex flex-col gap-4">
               <a
-                href="https://wa.me/6287781584555"
+                href="https://wa.me/6281959771654"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between gap-6 rounded-2xl bg-white/15 p-5 backdrop-blur-md transition-all hover:bg-white hover:text-[#8169FF] hover:scale-[1.02]"
-              >
+                className="group flex items-center justify-between gap-6 rounded-2xl bg-white/15 p-5 backdrop-blur-md transition-all hover:bg-white hover:text-[#8169FF] hover:scale-[1.02]">
                 <span className="flex items-center gap-4">
                   <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/25 text-white transition-colors group-hover:bg-[#8169FF]/15 group-hover:text-[#8169FF]">
                     <Phone className="h-5 w-5" />
@@ -46,7 +43,7 @@ export function ContactCTA() {
                       Contact Sales
                     </span>
                     <span className="text-[15px] font-semibold">
-                      WhatsApp · +XX XXX XXXX
+                      WhatsApp · +62 819-5977-1654
                     </span>
                   </span>
                 </span>
@@ -55,8 +52,7 @@ export function ContactCTA() {
 
               <a
                 href="mailto:business@airpay.mobi"
-                className="group flex items-center justify-between gap-6 rounded-2xl bg-white/15 p-5 backdrop-blur-md transition-all hover:bg-white hover:text-[#8169FF] hover:scale-[1.02]"
-              >
+                className="group flex items-center justify-between gap-6 rounded-2xl bg-white/15 p-5 backdrop-blur-md transition-all hover:bg-white hover:text-[#8169FF] hover:scale-[1.02]">
                 <span className="flex items-center gap-4">
                   <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/25 text-white transition-colors group-hover:bg-[#8169FF]/15 group-hover:text-[#8169FF]">
                     <Mail className="h-5 w-5" />

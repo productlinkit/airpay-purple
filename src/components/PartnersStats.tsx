@@ -101,13 +101,14 @@ const stats: StatItem[] = [
   },
   {
     icon: "/images/ps_globe-1.svg",
-    target: 1000,
+    target: 40,
+    suffix: "+",
     decimals: 0,
     label: "Active\nMerchants",
   },
   {
     icon: "/images/bx_wifi-1.svg",
-    target: 100,
+    target: 60,
     suffix: "+",
     decimals: 0,
     label: "Services\nLive",
@@ -118,7 +119,7 @@ function useCounterAnimation(
   target: number,
   decimals: number,
   enabled: boolean,
-  duration = 2000
+  duration = 2000,
 ) {
   const [value, setValue] = useState(0);
   const frameRef = useRef<number | null>(null);
@@ -192,7 +193,7 @@ export function PartnersStats() {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
     observer.observe(node);
     return () => observer.disconnect();
@@ -209,17 +210,15 @@ export function PartnersStats() {
         <div className="flex h-full flex-col rounded-[20px] bg-[#E4EEFA] p-5 transition-all hover:shadow-xl sm:rounded-[24px] sm:p-8 lg:rounded-[30px] lg:p-9">
           <div
             key={activePage}
-            className="flex animate-fade-in items-center justify-between gap-3"
-          >
+            className="flex animate-fade-in items-center justify-between gap-3">
             <div>
               <span
                 className={cn(
                   "inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider",
                   isPaymentChannels
                     ? "bg-[#8169FF]/15 text-[#8169FF]"
-                    : "bg-[#9EC6FE]/40 text-[#1f4ea1]"
-                )}
-              >
+                    : "bg-[#9EC6FE]/40 text-[#1f4ea1]",
+                )}>
                 {currentPage.category}
               </span>
               <div className="mt-2 font-heading text-[18px] font-bold text-black sm:text-[20px]">
@@ -235,17 +234,15 @@ export function PartnersStats() {
             key={`logos-${activePage}`}
             className={cn(
               "mt-6 grid flex-1 animate-fade-in content-start gap-x-3 gap-y-5",
-              currentLogos.length > 8 ? "grid-cols-3" : "grid-cols-2"
-            )}
-          >
+              currentLogos.length > 8 ? "grid-cols-3" : "grid-cols-2",
+            )}>
             {currentLogos.map((src, i) => (
               <div
                 key={i}
                 className={cn(
                   "flex items-center justify-center transition-transform hover:scale-110",
-                  currentLogos.length > 8 ? "h-16" : "h-12"
-                )}
-              >
+                  currentLogos.length > 8 ? "h-16" : "h-12",
+                )}>
                 <Image
                   src={src}
                   alt={`Partner ${i + 1}`}
@@ -253,7 +250,7 @@ export function PartnersStats() {
                   height={48}
                   className={cn(
                     "w-auto object-contain",
-                    currentLogos.length > 8 ? "h-11" : "h-9"
+                    currentLogos.length > 8 ? "h-11" : "h-9",
                   )}
                 />
               </div>
@@ -271,7 +268,7 @@ export function PartnersStats() {
                   "rounded-full transition-all",
                   i === activePage
                     ? "h-2 w-7 bg-[#8169FF]"
-                    : "h-2 w-2 bg-[#A486FF]/60 hover:bg-[#A486FF]"
+                    : "h-2 w-2 bg-[#A486FF]/60 hover:bg-[#A486FF]",
                 )}
               />
             ))}
@@ -283,16 +280,14 @@ export function PartnersStats() {
       <ScrollReveal delay={120} className="h-full lg:col-span-2">
         <div
           ref={statsRef}
-          className="flex h-full flex-col rounded-[20px] bg-[#F2F2F2] p-5 transition-all hover:shadow-xl sm:rounded-[24px] sm:p-8 lg:rounded-[30px] lg:p-10"
-        >
+          className="flex h-full flex-col rounded-[20px] bg-[#F2F2F2] p-5 transition-all hover:shadow-xl sm:rounded-[24px] sm:p-8 lg:rounded-[30px] lg:p-10">
           <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
             <h2 className="max-w-[540px] font-heading text-[20px] font-bold leading-[1.25] text-black sm:text-[26px] lg:text-[32px]">
               When it comes to payments, borders are never an obstacle!
             </h2>
             <button
               type="button"
-              className="flex-shrink-0 rounded-full bg-[#8169FF] px-6 py-2 text-[12px] font-bold text-white transition-all hover:bg-[#6952e6] hover:scale-105 hover:shadow-[0_10px_24px_rgba(128,105,255,0.35)] sm:px-9 sm:py-3 sm:text-[14px]"
-            >
+              className="flex-shrink-0 rounded-full bg-[#8169FF] px-6 py-2 text-[12px] font-bold text-white transition-all hover:bg-[#6952e6] hover:scale-105 hover:shadow-[0_10px_24px_rgba(128,105,255,0.35)] sm:px-9 sm:py-3 sm:text-[14px]">
               Learn More
             </button>
           </div>

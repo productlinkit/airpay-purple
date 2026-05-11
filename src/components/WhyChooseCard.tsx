@@ -1,4 +1,10 @@
-import { ShieldCheck, Lock, Landmark, Gauge, type LucideIcon } from "lucide-react";
+import {
+  ShieldCheck,
+  Lock,
+  Landmark,
+  Gauge,
+  type LucideIcon,
+} from "lucide-react";
 
 interface WhyItem {
   icon: LucideIcon;
@@ -25,7 +31,7 @@ export function WhyChooseCard({ cols = 4 }: WhyChooseCardProps = {}) {
         Why Choose
       </div>
       <h2 className="mt-3 font-heading text-[22px] font-bold leading-[1.25] text-black sm:text-[26px] lg:text-[32px]">
-        Why businesses choose <span className="text-[#8169FF]">Airpay</span>
+        Why choose <span className="text-[#8169FF]">Airpay</span>
       </h2>
 
       <div
@@ -33,13 +39,11 @@ export function WhyChooseCard({ cols = 4 }: WhyChooseCardProps = {}) {
           cols === 2
             ? "mt-7 grid flex-1 grid-cols-2 gap-4 sm:gap-5 lg:mt-9"
             : "mt-7 grid flex-1 grid-cols-2 gap-4 sm:gap-5 lg:mt-9 lg:grid-cols-4"
-        }
-      >
+        }>
         {whyItems.map((item) => (
           <div
             key={item.title}
-            className="group flex flex-col items-start rounded-[20px] bg-white p-5 transition-all hover:-translate-y-1 hover:shadow-lg sm:p-6"
-          >
+            className="group flex flex-col items-start rounded-[20px] bg-white p-5 transition-all hover:-translate-y-1 hover:shadow-lg sm:p-6">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#A486FF]/20 to-[#9EC6FE]/20 text-[#8169FF] transition-transform group-hover:scale-110 group-hover:rotate-6 sm:h-14 sm:w-14">
               <item.icon className="h-6 w-6 sm:h-7 sm:w-7" />
             </div>
