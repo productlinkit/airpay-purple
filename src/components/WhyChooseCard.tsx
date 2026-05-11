@@ -27,9 +27,6 @@ interface WhyChooseCardProps {
 export function WhyChooseCard({ cols = 4 }: WhyChooseCardProps = {}) {
   return (
     <div className="flex h-full flex-col rounded-[24px] bg-[#F2F2F2] p-6 transition-all hover:shadow-xl sm:p-8 lg:rounded-[30px] lg:p-10">
-      <div className="inline-flex w-fit items-center gap-2 rounded-full bg-[#8169FF]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#8169FF]">
-        Why Choose
-      </div>
       <h2 className="mt-3 font-heading text-[22px] font-bold leading-[1.25] text-black sm:text-[26px] lg:text-[32px]">
         Why choose <span className="text-[#8169FF]">Airpay</span>
       </h2>

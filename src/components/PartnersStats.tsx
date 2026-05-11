@@ -87,7 +87,7 @@ interface StatItem {
 const stats: StatItem[] = [
   {
     icon: "/images/mingcute_bank-line-1.svg",
-    target: 100,
+    target: 85,
     suffix: "+",
     decimals: 0,
     label: "Banks",
