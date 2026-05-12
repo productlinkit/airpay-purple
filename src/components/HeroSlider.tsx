@@ -42,11 +42,11 @@ export function HeroSlider() {
 
   const goToNext = useCallback(
     () => setCurrentSlide((p) => (p + 1) % slides.length),
-    []
+    [],
   );
   const goToPrev = useCallback(
     () => setCurrentSlide((p) => (p - 1 + slides.length) % slides.length),
-    []
+    [],
   );
 
   useEffect(() => {
@@ -60,17 +60,14 @@ export function HeroSlider() {
         className="relative h-[560px] overflow-hidden rounded-[24px] sm:h-[720px] sm:rounded-[36px] lg:h-[820px] lg:rounded-[40px]"
         style={{
           background: "linear-gradient(135deg, #E2DBFB 0%, #B0A0EE 100%)",
-        }}
-      >
-
+        }}>
         {/* Logo pill tab — top-left */}
         <div
           className="absolute top-0 left-0 z-50 flex h-[64px] items-center bg-white pl-4 pr-8 sm:h-[100px] sm:pl-8 sm:pr-14 lg:h-[110px] lg:pl-12 lg:pr-16"
           style={{
             borderTopLeftRadius: 24,
             borderBottomRightRadius: 40,
-          }}
-        >
+          }}>
           <Link href="/" className="transition-transform hover:scale-105">
             <Image
               src="/images/airpay-logo.png"
@@ -89,8 +86,7 @@ export function HeroSlider() {
           style={{
             borderTopRightRadius: 40,
             borderBottomLeftRadius: 60,
-          }}
-        >
+          }}>
           <nav>
             <Nav variant="hero" />
           </nav>
@@ -103,8 +99,7 @@ export function HeroSlider() {
           style={{
             borderTopRightRadius: 24,
             borderBottomLeftRadius: 40,
-          }}
-        >
+          }}>
           <MobileMenu />
         </div>
 
@@ -116,9 +111,8 @@ export function HeroSlider() {
                 "absolute inset-0 transition-all duration-1000",
                 i === currentSlide
                   ? "opacity-100 translate-x-0"
-                  : "opacity-0 translate-x-6 pointer-events-none"
-              )}
-            >
+                  : "opacity-0 translate-x-6 pointer-events-none",
+              )}>
               {slide.kind === "legacy" && (
                 <LegacySlide slide={slide} active={i === currentSlide} />
               )}
@@ -133,16 +127,14 @@ export function HeroSlider() {
               type="button"
               onClick={goToPrev}
               aria-label="Previous slide"
-              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-white/60 text-[#8169FF] backdrop-blur-sm transition-all hover:bg-white hover:scale-110 sm:h-[48px] sm:w-[48px] lg:h-[56px] lg:w-[56px]"
-            >
+              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-white/60 text-[#8169FF] backdrop-blur-sm transition-all hover:bg-white hover:scale-110 sm:h-[48px] sm:w-[48px] lg:h-[56px] lg:w-[56px]">
               <ChevronLeft className="h-5 w-5 lg:h-6 lg:w-6" />
             </button>
             <button
               type="button"
               onClick={goToNext}
               aria-label="Next slide"
-              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-white/60 text-[#8169FF] backdrop-blur-sm transition-all hover:bg-white hover:scale-110 sm:h-[48px] sm:w-[48px] lg:h-[56px] lg:w-[56px]"
-            >
+              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-white/60 text-[#8169FF] backdrop-blur-sm transition-all hover:bg-white hover:scale-110 sm:h-[48px] sm:w-[48px] lg:h-[56px] lg:w-[56px]">
               <ChevronRight className="h-5 w-5 lg:h-6 lg:w-6" />
             </button>
           </div>
@@ -154,8 +146,7 @@ export function HeroSlider() {
               style={{
                 borderTopRightRadius: 60,
                 borderBottomLeftRadius: 40,
-              }}
-            >
+              }}>
               <p className="text-[15px] leading-relaxed text-black sm:text-[16px]">
                 Connected to{" "}
                 <strong className="font-bold">1000 merchants</strong> across
@@ -184,9 +175,8 @@ function LegacySlide({
       <div
         className={cn(
           "absolute inset-y-0 right-0 z-10 hidden w-[55%] sm:block sm:opacity-100",
-          active && "animate-hero-image"
-        )}
-      >
+          active && "animate-hero-image",
+        )}>
         <div className="relative h-full w-full">
           <Image
             src={slide.image}
@@ -201,9 +191,8 @@ function LegacySlide({
       <div
         className={cn(
           "relative z-20 flex h-full w-full flex-col justify-center px-5 pt-[80px] sm:w-3/4 sm:px-10 sm:pt-[110px] lg:w-1/2 lg:pl-24 lg:pr-8",
-          active && "animate-hero-text"
-        )}
-      >
+          active && "animate-hero-text",
+        )}>
         <div className="max-w-[560px]">
           <h2 className="text-[24px] font-extrabold leading-[1.15] text-black sm:text-[40px] lg:text-[52px] lg:leading-[1.08]">
             {slide.title}
@@ -213,8 +202,7 @@ function LegacySlide({
           </p>
           <Link
             href="/contact"
-            className="group mt-5 inline-flex items-center gap-2 rounded-full border-2 border-[#8169FF] bg-white py-1.5 pl-5 pr-1.5 text-[13px] font-semibold text-[#8169FF] transition-all hover:bg-[#8169FF] hover:text-white hover:scale-105 hover:shadow-[0_10px_28px_rgba(128,105,255,0.35)] sm:mt-8 sm:py-2 sm:pl-7 sm:pr-2 sm:text-[15px] lg:mt-10 lg:pl-8 lg:text-[16px]"
-          >
+            className="group mt-5 inline-flex items-center gap-2 rounded-full border-2 border-[#8169FF] bg-white py-1.5 pl-5 pr-1.5 text-[13px] font-semibold text-[#8169FF] transition-all hover:bg-[#8169FF] hover:text-white hover:scale-105 hover:shadow-[0_10px_28px_rgba(128,105,255,0.35)] sm:mt-8 sm:py-2 sm:pl-7 sm:pr-2 sm:text-[15px] lg:mt-10 lg:pl-8 lg:text-[16px]">
             {slide.buttonText}
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#8169FF] text-white transition-all group-hover:bg-white group-hover:text-[#8169FF] group-hover:translate-x-1 sm:h-9 sm:w-9 lg:h-10 lg:w-10">
               <ArrowRight className="h-4 w-4 lg:h-5 lg:w-5" />
@@ -266,8 +254,7 @@ function DCBSlide() {
         <div className="mt-5 flex flex-wrap items-center gap-2 sm:mt-7">
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-3 rounded-full bg-[#8169FF] py-1.5 pl-5 pr-1.5 text-[13px] font-bold text-white transition-all hover:scale-105 hover:shadow-[0_10px_28px_rgba(128,105,255,0.4)] sm:py-2 sm:pl-6 sm:pr-2 sm:text-[14px]"
-          >
+            className="group inline-flex items-center gap-3 rounded-full bg-[#8169FF] py-1.5 pl-5 pr-1.5 text-[13px] font-bold text-white transition-all hover:scale-105 hover:shadow-[0_10px_28px_rgba(128,105,255,0.4)] sm:py-2 sm:pl-6 sm:pr-2 sm:text-[14px]">
             Start Integration
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#8169FF] transition-transform group-hover:translate-x-1 sm:h-8 sm:w-8">
               <ArrowRight className="h-4 w-4" />
@@ -275,13 +262,11 @@ function DCBSlide() {
           </Link>
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 px-2 py-2 text-[13px] font-bold text-[#2b2f38] transition-colors hover:text-[#8169FF] sm:px-3 sm:text-[14px]"
-          >
+            className="group inline-flex items-center gap-2 px-2 py-2 text-[13px] font-bold text-[#2b2f38] transition-colors hover:text-[#8169FF] sm:px-3 sm:text-[14px]">
             Talk to Sales
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
-
       </div>
     </div>
   );
@@ -327,16 +312,15 @@ function AggregatorSlide() {
         </h2>
 
         <p className="mt-3 max-w-[480px] text-[13px] leading-relaxed text-[#2b2f38] sm:mt-5 sm:text-[15px] lg:text-[16px]">
-          Airpay connects you to 100+ payment channels including e-wallets,
-          bank transfers, QR payments, cards, and more. Accept payments easily
-          and scale your business globally.
+          Airpay connects you to 100+ payment channels including e-wallets, bank
+          transfers, QR payments, cards, and more. Accept payments easily and
+          scale your business globally.
         </p>
 
         <div className="mt-5 flex flex-wrap items-center gap-2 sm:mt-7">
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-3 rounded-full bg-[#8169FF] py-1.5 pl-5 pr-1.5 text-[13px] font-bold text-white transition-all hover:scale-105 hover:shadow-[0_10px_28px_rgba(128,105,255,0.4)] sm:py-2 sm:pl-6 sm:pr-2 sm:text-[14px]"
-          >
+            className="group inline-flex items-center gap-3 rounded-full bg-[#8169FF] py-1.5 pl-5 pr-1.5 text-[13px] font-bold text-white transition-all hover:scale-105 hover:shadow-[0_10px_28px_rgba(128,105,255,0.4)] sm:py-2 sm:pl-6 sm:pr-2 sm:text-[14px]">
             Get Started
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#8169FF] transition-transform group-hover:translate-x-1 sm:h-8 sm:w-8">
               <ArrowRight className="h-4 w-4" />
@@ -344,8 +328,7 @@ function AggregatorSlide() {
           </Link>
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 px-2 py-2 text-[13px] font-bold text-[#2b2f38] transition-colors hover:text-[#8169FF] sm:px-3 sm:text-[14px]"
-          >
+            className="group inline-flex items-center gap-2 px-2 py-2 text-[13px] font-bold text-[#2b2f38] transition-colors hover:text-[#8169FF] sm:px-3 sm:text-[14px]">
             Talk to Sales
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
@@ -355,7 +338,7 @@ function AggregatorSlide() {
       {/* ── Bottom trust strip (aggregator variant) ── */}
       <div className="absolute bottom-[100px] left-4 right-4 z-20 hidden rounded-[24px] bg-white/85 px-6 py-4 shadow-[0_10px_40px_rgba(80,60,180,0.18)] backdrop-blur-md sm:block sm:bottom-[110px] sm:left-6 sm:right-6 lg:bottom-[110px] lg:left-20 lg:right-12 lg:px-7">
         <div className="flex flex-wrap items-center gap-x-8 gap-y-3 lg:flex-nowrap lg:gap-x-9">
-          <AggIconStat icon={UserIcon} value="1000+" label="Merchants" />
+          <AggIconStat icon={UserIcon} value="100+" label="Merchants" />
           <AggIconStat
             icon={LayoutGridIcon}
             value="85+"
@@ -392,8 +375,7 @@ function LayoutGridIcon({ className }: { className?: string }) {
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+      strokeLinejoin="round">
       <rect x="3" y="3" width="7" height="7" rx="1.5" />
       <rect x="14" y="3" width="7" height="7" rx="1.5" />
       <rect x="3" y="14" width="7" height="7" rx="1.5" />
@@ -427,4 +409,3 @@ function AggIconStat({
     </div>
   );
 }
-
