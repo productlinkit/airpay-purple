@@ -90,7 +90,7 @@ const developersMega: MegaConfig = {
       icon: Code2,
       title: "API for Digital Carrier Billing (DCB)",
       description: "Integrate telco billing in one call",
-      href: "/products/direct-carrier-billing",
+      href: "https://doc.airpay.mobi/dcb-intro",
     },
     {
       icon: Braces,
@@ -255,10 +255,14 @@ function MegaPanel({
             {config.columnTitle}
           </div>
           <ul className="flex flex-col gap-1">
-            {config.items.map((item) => (
+            {config.items.map((item) => {
+              const isExternal = item.href?.startsWith("http") ?? false;
+              return (
               <li key={item.title}>
                 <Link
                   href={item.href ?? "#"}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
                   className="group flex items-start gap-3 rounded-2xl p-3 transition-all hover:bg-[#E4EEFA]"
                 >
                   <span className="mt-0.5 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[#A486FF]/15 text-[#8169FF] transition-transform group-hover:scale-110">
@@ -274,7 +278,8 @@ function MegaPanel({
                   </div>
                 </Link>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </div>
       </div>

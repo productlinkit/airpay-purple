@@ -49,7 +49,7 @@ const items: MobileNavItem[] = [
     items: [
       {
         label: "API for Digital Carrier Billing (DCB)",
-        href: "/products/direct-carrier-billing",
+        href: "https://doc.airpay.mobi/dcb-intro",
       },
       { label: "API for Digital Payment", href: "/products/digital-payments" },
     ],
@@ -177,16 +177,21 @@ export function MobileMenu({ size = "md" }: MobileMenuProps) {
                                 : "grid-rows-[0fr]",
                             )}>
                             <ul className="min-h-0 space-y-1 pl-4 pt-1">
-                              {item.items.map((sub) => (
+                              {item.items.map((sub) => {
+                                const isExternal = sub.href.startsWith("http");
+                                return (
                                 <li key={sub.label}>
                                   <Link
                                     href={sub.href}
                                     onClick={close}
+                                    target={isExternal ? "_blank" : undefined}
+                                    rel={isExternal ? "noopener noreferrer" : undefined}
                                     className="block rounded-xl border-l-2 border-[#A486FF]/30 px-4 py-2.5 text-[14px] font-semibold text-[#2b2f38] transition-colors hover:border-[#8169FF] hover:bg-[#E4EEFA] hover:text-[#8169FF]">
                                     {sub.label}
                                   </Link>
                                 </li>
-                              ))}
+                                );
+                              })}
                             </ul>
                           </div>
                         </>

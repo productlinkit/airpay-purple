@@ -8,11 +8,7 @@ import {
   ChevronRight,
   ArrowRight,
   User as UserIcon,
-  CreditCard as CardIcon,
-  Users,
-  BarChart3,
   Globe,
-  ShieldCheck,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Nav, GetStartedButton } from "./Nav";
@@ -232,13 +228,6 @@ function LegacySlide({
 
 /* ─────────────────────────── Slide 2 — DCB flow ─────────────────────────── */
 
-const DCB_TRUST_LOGOS = [
-  "/images/telco/telkomsel.png",
-  "/images/telco/stc.png",
-  "/images/telco/true.png",
-  "/images/telco/etisalat.png",
-];
-
 function DCBSlide() {
   return (
     <div className="absolute inset-0">
@@ -254,7 +243,7 @@ function DCBSlide() {
       </div>
 
       {/* ── Left column text content ── */}
-      <div className="relative z-20 flex h-full w-full flex-col px-5 pb-[80px] pt-[80px] sm:w-3/4 sm:px-10 sm:pb-[210px] sm:pt-[120px] lg:w-1/2 lg:pb-[210px] lg:pl-20 lg:pr-8 lg:pt-[130px]">
+      <div className="relative z-20 flex h-full w-full flex-col justify-center px-5 pb-[80px] pt-[80px] sm:w-3/4 sm:px-10 sm:pb-[110px] sm:pt-[110px] lg:w-1/2 lg:pb-[110px] lg:pl-20 lg:pr-8 lg:pt-[110px]">
         <span className="inline-flex w-fit items-center rounded-full bg-[#8169FF]/25 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-[#5a3fdb] backdrop-blur-sm sm:px-4 sm:py-1.5 sm:text-[11px]">
           DCB &amp; Merchant Aggregator Platform
         </span>
@@ -293,82 +282,7 @@ function DCBSlide() {
           </Link>
         </div>
 
-        <div className="mt-auto grid max-w-[520px] grid-cols-3 gap-2 pt-5 sm:gap-4 sm:pt-6">
-          <DCBLeftFeature icon={CardIcon} title="No card" subtitle="required" />
-          <DCBLeftFeature icon={Users} title="Reach" subtitle="unbanked users" />
-          <DCBLeftFeature
-            icon={BarChart3}
-            title="Works across"
-            subtitle="telco operators"
-          />
-        </div>
       </div>
-
-      {/* ── Bottom trust strip ── */}
-      <div className="absolute bottom-[100px] left-4 right-4 z-20 hidden rounded-[24px] bg-white/85 px-6 py-4 shadow-[0_10px_40px_rgba(80,60,180,0.18)] backdrop-blur-md sm:block sm:bottom-[110px] sm:left-6 sm:right-6 lg:bottom-[110px] lg:left-20 lg:right-12 lg:px-8">
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 lg:flex-nowrap lg:gap-x-7">
-          <p className="max-w-[210px] flex-shrink-0 text-[12px] leading-tight text-[#2b2f38] lg:text-[13px]">
-            Trusted by leading digital businesses and powered by global telco
-            partners
-          </p>
-          <TrustStat value="1000+" label="Merchants" />
-          <TrustStat value="100+" label="Payment Channels" />
-          <TrustStat value="20+" label="Countries" />
-          <TrustStat value="99.5%" label="Success Rate" />
-          <TrustStat value="10M+" label="Transactions Processed" />
-          <div className="ml-auto hidden items-center gap-5 lg:flex">
-            {DCB_TRUST_LOGOS.map((src, i) => (
-              <Image
-                key={i}
-                src={src}
-                alt="Telco partner"
-                width={70}
-                height={26}
-                className="h-6 w-auto object-contain opacity-90"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function DCBLeftFeature({
-  icon: Icon,
-  title,
-  subtitle,
-}: {
-  icon: typeof UserIcon;
-  title: string;
-  subtitle: string;
-}) {
-  return (
-    <div className="flex items-center gap-2 sm:gap-3">
-      <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-xl bg-white/70 text-[#5a3fdb] shadow-[0_4px_14px_rgba(80,60,180,0.15)] backdrop-blur-sm sm:h-11 sm:w-11 sm:rounded-2xl">
-        <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
-      </span>
-      <div className="leading-tight">
-        <div className="text-[11px] font-bold text-black sm:text-[13px]">
-          {title}
-        </div>
-        <div className="text-[10px] text-[#2b2f38]/80 sm:text-[12px]">
-          {subtitle}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function TrustStat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="flex flex-col leading-tight">
-      <span className="font-heading text-[18px] font-extrabold text-[#5a3fdb] lg:text-[20px]">
-        {value}
-      </span>
-      <span className="text-[10px] text-[#2b2f38]/80 lg:text-[11px]">
-        {label}
-      </span>
     </div>
   );
 }
@@ -444,15 +358,10 @@ function AggregatorSlide() {
           <AggIconStat icon={UserIcon} value="1000+" label="Merchants" />
           <AggIconStat
             icon={LayoutGridIcon}
-            value="100+"
+            value="85+"
             label="Payment Channels"
           />
-          <AggIconStat icon={Globe} value="20+" label="Countries" />
-          <AggIconStat
-            icon={ShieldCheck}
-            value="99.5%"
-            label="Success Rate"
-          />
+          <AggIconStat icon={Globe} value="15+" label="Countries" />
           <p className="hidden max-w-[210px] flex-shrink-0 text-[11px] leading-tight text-[#2b2f38] lg:block lg:text-[12px]">
             Trusted by leading businesses and powered by global partners
           </p>
