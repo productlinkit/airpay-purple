@@ -28,8 +28,8 @@ type Slide =
 const slides: Slide[] = [
   {
     kind: "legacy",
-    title: "Powering Global Digital Payments with One Integration",
-    body: "Airpay is a global digital payments platform that enables merchants to accept payments through Digital Carrier Billing and multiple payment methods worldwide with a single integration.",
+    title: "Helping Businesses Scale Without Limits",
+    body: "Unlock global growth through Airpay’s connected Direct Carrier Billing and digital payment ecosystem. Reach millions of potential customers, access diverse local payment options across multiple markets, and scale your business worldwide through one powerful and seamless integration.",
     image: "/images/photos/image_hero.webp",
     buttonText: "Get Started",
   },
@@ -149,9 +149,9 @@ export function HeroSlider() {
               }}>
               <p className="text-[15px] leading-relaxed text-black sm:text-[16px]">
                 Connected to{" "}
-                <strong className="font-bold">1000 merchants</strong> across
+                <strong className="font-bold">100+ merchants</strong> across
                 different verticals, through{" "}
-                <strong className="font-bold">100 payment channels</strong>
+                <strong className="font-bold">85+ payment channels</strong>
               </p>
             </div>
           )}
@@ -239,10 +239,7 @@ function DCBSlide() {
         <h2 className="mt-4 font-heading text-[26px] font-extrabold leading-[1.05] tracking-tight text-black sm:mt-5 sm:text-[44px] lg:text-[56px]">
           Digital Carrier Billing
           <br />
-          made{" "}
-          <span className="bg-gradient-to-r from-[#FF6FB5] to-[#FF8AA9] bg-clip-text text-transparent">
-            simple
-          </span>
+          made <span className="">simple</span>
         </h2>
 
         <p className="mt-3 max-w-[480px] text-[13px] leading-relaxed text-[#2b2f38] sm:mt-5 sm:text-[15px] lg:text-[16px]">
@@ -306,9 +303,7 @@ function AggregatorSlide() {
           <br />
           All Payment Methods
           <br />
-          <span className="bg-gradient-to-r from-[#7E5BFF] via-[#B47BFF] to-[#FF7DB6] bg-clip-text text-transparent">
-            More Growth
-          </span>
+          <span className="">More Growth</span>
         </h2>
 
         <p className="mt-3 max-w-[480px] text-[13px] leading-relaxed text-[#2b2f38] sm:mt-5 sm:text-[15px] lg:text-[16px]">
