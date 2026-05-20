@@ -10,7 +10,7 @@ import {
   Wallet,
   Database,
   CreditCard,
-  Globe,
+  Link2,
   Code2,
   Braces,
   type LucideIcon,
@@ -52,7 +52,7 @@ const productsMega: MegaConfig = {
     },
     {
       icon: Wallet,
-      title: "Digital Payments (Pay-In & Pay-Out)",
+      title: "Payments & Disbursements",
       description: "Accept payments, send payouts globally",
       href: "/products/digital-payments",
     },
@@ -69,10 +69,10 @@ const productsMega: MegaConfig = {
       href: "/products/edc-payment-solutions",
     },
     {
-      icon: Globe,
-      title: "Cross-Border Payments",
-      description: "Local rails in dozens of markets",
-      href: "/products/cross-border-payments",
+      icon: Link2,
+      title: "Payment Link",
+      description: "Create. Share. Get paid.",
+      href: "/products/payment-link",
     },
   ],
 };
@@ -122,7 +122,7 @@ function useIsClient() {
   return useSyncExternalStore(
     () => () => {},
     () => true,
-    () => false
+    () => false,
   );
 }
 
@@ -139,39 +139,34 @@ export function Nav({ variant = "hero" }: NavProps) {
               key={item.label}
               className="relative"
               onMouseEnter={() => item.mega && setOpenMenu(item.label)}
-              onMouseLeave={() => item.mega && setOpenMenu(null)}
-            >
+              onMouseLeave={() => item.mega && setOpenMenu(null)}>
               {item.mega ? (
                 <button
                   type="button"
                   className={cn(
                     "flex items-center gap-1 text-[15px] font-semibold transition-colors",
-                    isOpen ? "text-[#8169FF]" : "text-black hover:text-[#8169FF]"
-                  )}
-                >
+                    isOpen
+                      ? "text-[#8169FF]"
+                      : "text-black hover:text-[#8169FF]",
+                  )}>
                   {item.label}
                   <ChevronDown
                     className={cn(
                       "h-4 w-4 transition-transform",
-                      isOpen && "rotate-180"
+                      isOpen && "rotate-180",
                     )}
                   />
                 </button>
               ) : (
                 <Link
                   href={item.href ?? "#"}
-                  className="text-[15px] font-semibold text-black transition-colors hover:text-[#8169FF]"
-                >
+                  className="text-[15px] font-semibold text-black transition-colors hover:text-[#8169FF]">
                   {item.label}
                 </Link>
               )}
 
               {item.mega && (
-                <MegaPanel
-                  open={isOpen}
-                  config={item.mega}
-                  variant={variant}
-                />
+                <MegaPanel open={isOpen} config={item.mega} variant={variant} />
               )}
             </li>
           );
@@ -190,10 +185,10 @@ function MegaBackdrop({ open }: { open: boolean }) {
     <div
       className={cn(
         "pointer-events-none fixed inset-0 z-30 bg-black/30 backdrop-blur-md transition-opacity duration-300",
-        open ? "opacity-100" : "opacity-0"
+        open ? "opacity-100" : "opacity-0",
       )}
     />,
-    document.body
+    document.body,
   );
 }
 
@@ -213,18 +208,16 @@ function MegaPanel({
         "absolute left-1/2 top-full z-40 -translate-x-1/2 pt-5 transition-all duration-200",
         open
           ? "pointer-events-auto translate-y-0 opacity-100"
-          : "pointer-events-none translate-y-2 opacity-0"
-      )}
-    >
+          : "pointer-events-none translate-y-2 opacity-0",
+      )}>
       <div
         className={cn(
           "rounded-[28px] bg-white p-5 shadow-[0_24px_70px_rgba(80,60,180,0.3)]",
           hasFeatured
             ? "grid w-[780px] grid-cols-[260px_1fr] gap-5"
             : "w-[460px]",
-          variant === "hero" && "mt-1"
-        )}
-      >
+          variant === "hero" && "mt-1",
+        )}>
         {config.featured && (
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#8169FF] to-[#A486FF] p-6 text-white">
             <span className="pointer-events-none absolute -top-20 -right-20 h-44 w-44 rounded-full bg-white/15 blur-3xl" />
@@ -241,8 +234,7 @@ function MegaPanel({
               </p>
               <button
                 type="button"
-                className="group mt-auto inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2 text-[13px] font-bold text-[#8169FF] transition-transform hover:scale-105"
-              >
+                className="group mt-auto inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2 text-[13px] font-bold text-[#8169FF] transition-transform hover:scale-105">
                 {config.featured.cta}
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
               </button>
@@ -258,26 +250,25 @@ function MegaPanel({
             {config.items.map((item) => {
               const isExternal = item.href?.startsWith("http") ?? false;
               return (
-              <li key={item.title}>
-                <Link
-                  href={item.href ?? "#"}
-                  target={isExternal ? "_blank" : undefined}
-                  rel={isExternal ? "noopener noreferrer" : undefined}
-                  className="group flex items-start gap-3 rounded-2xl p-3 transition-all hover:bg-[#E4EEFA]"
-                >
-                  <span className="mt-0.5 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[#A486FF]/15 text-[#8169FF] transition-transform group-hover:scale-110">
-                    <item.icon className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <div className="font-heading text-[14px] font-bold text-black transition-colors group-hover:text-[#8169FF]">
-                      {item.title}
+                <li key={item.title}>
+                  <Link
+                    href={item.href ?? "#"}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="group flex items-start gap-3 rounded-2xl p-3 transition-all hover:bg-[#E4EEFA]">
+                    <span className="mt-0.5 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[#A486FF]/15 text-[#8169FF] transition-transform group-hover:scale-110">
+                      <item.icon className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <div className="font-heading text-[14px] font-bold text-black transition-colors group-hover:text-[#8169FF]">
+                        {item.title}
+                      </div>
+                      <div className="mt-0.5 text-[12px] text-gray-500">
+                        {item.description}
+                      </div>
                     </div>
-                    <div className="mt-0.5 text-[12px] text-gray-500">
-                      {item.description}
-                    </div>
-                  </div>
-                </Link>
-              </li>
+                  </Link>
+                </li>
               );
             })}
           </ul>
@@ -294,16 +285,16 @@ export function GetStartedButton({ size = "md" }: { size?: "md" | "sm" }) {
       href="/contact"
       className={cn(
         "group inline-flex items-center gap-3 rounded-full bg-[#8169FF] font-bold text-white transition-all hover:scale-105 hover:shadow-[0_10px_28px_rgba(128,105,255,0.4)]",
-        size === "md" ? "py-1.5 pl-6 pr-1.5 text-[15px]" : "py-1 pl-5 pr-1 text-[14px]"
-      )}
-    >
+        size === "md"
+          ? "py-1.5 pl-6 pr-1.5 text-[15px]"
+          : "py-1 pl-5 pr-1 text-[14px]",
+      )}>
       Get Started
       <span
         className={cn(
           "flex items-center justify-center rounded-full bg-white text-[#8169FF] transition-transform group-hover:translate-x-1",
-          size === "md" ? "h-9 w-9" : "h-8 w-8"
-        )}
-      >
+          size === "md" ? "h-9 w-9" : "h-8 w-8",
+        )}>
         <ArrowRight className={size === "md" ? "h-4 w-4" : "h-3.5 w-3.5"} />
       </span>
     </Link>

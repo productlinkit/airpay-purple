@@ -9,6 +9,13 @@ import { ContactCTA } from "@/components/ContactCTA";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { WhyChooseCard } from "@/components/WhyChooseCard";
 import { AirpayForBusiness } from "@/components/AirpayForBusiness";
+import { DigitalPaymentsFlow } from "@/components/DigitalPaymentsFlow";
+import { BillingHero } from "@/components/BillingHero";
+import { BillingFlow } from "@/components/BillingFlow";
+import { PaymentLinkFlow } from "@/components/PaymentLinkFlow";
+import { EDCHero } from "@/components/EDCHero";
+import { EDCFeatures } from "@/components/EDCFeatures";
+import { EDCFlow } from "@/components/EDCFlow";
 import { products, getProductBySlug } from "@/lib/products";
 
 export function generateStaticParams() {
@@ -45,6 +52,11 @@ export default async function ProductPage({
       <PageHeader />
       <main>
         {/* Hero */}
+        {product.slug === "billing-infrastructure" ? (
+          <BillingHero />
+        ) : product.slug === "edc-payment-solutions" ? (
+          <EDCHero />
+        ) : (
         <section className="px-4 pt-28 sm:px-6 sm:pt-32 lg:px-20">
           <ScrollReveal>
             <div
@@ -104,13 +116,17 @@ export default async function ProductPage({
                   </div>
                 </div>
 
-                <div className="relative h-[280px] w-full sm:h-[360px] lg:h-[520px]">
+                <div className="relative h-[280px] w-full self-stretch sm:h-[360px] lg:h-auto lg:min-h-[520px]">
                   <Image
                     src={product.illustration}
                     alt={product.name}
                     fill
                     priority
-                    className="object-cover"
+                    className={
+                      product.slug === "digital-payments"
+                        ? "object-cover object-bottom"
+                        : "object-cover"
+                    }
                     sizes="(min-width: 1024px) 45vw, 100vw"
                   />
                 </div>
@@ -118,90 +134,153 @@ export default async function ProductPage({
             </div>
           </ScrollReveal>
         </section>
+        )}
 
         {/* Features bento */}
-        <section id="features" className="mt-4 grid grid-cols-1 gap-4 px-4 sm:gap-6 sm:px-6 lg:mt-6 lg:grid-cols-2 lg:px-20">
-          {product.features.map((f, i) => (
-            <ScrollReveal key={f.title} delay={i * 100}>
-              <div className="group h-full rounded-[24px] bg-[#E4EEFA] p-6 sm:p-8 lg:rounded-[30px] transition-all hover:bg-[#8169FF] hover:shadow-xl">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-[#8169FF] transition-colors group-hover:bg-white/25 group-hover:text-white">
-                  <f.icon className="h-6 w-6" />
+        {product.slug === "edc-payment-solutions" ? (
+          <EDCFeatures />
+        ) : product.features.length > 0 ? (
+          <section id="features" className="mt-4 grid grid-cols-1 gap-4 px-4 sm:gap-6 sm:px-6 lg:mt-6 lg:grid-cols-2 lg:px-20">
+            {product.features.map((f, i) => (
+              <ScrollReveal key={f.title} delay={i * 100}>
+                <div className="group h-full rounded-[24px] bg-[#E4EEFA] p-6 sm:p-8 lg:rounded-[30px] transition-all hover:bg-[#8169FF] hover:shadow-xl">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-[#8169FF] transition-colors group-hover:bg-white/25 group-hover:text-white">
+                    <f.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-6 font-heading text-[22px] font-bold text-black transition-colors group-hover:text-white">
+                    {f.title}
+                  </h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-[#2b2f38] transition-colors group-hover:text-white/90">
+                    {f.description}
+                  </p>
                 </div>
-                <h3 className="mt-6 font-heading text-[22px] font-bold text-black transition-colors group-hover:text-white">
-                  {f.title}
-                </h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-[#2b2f38] transition-colors group-hover:text-white/90">
-                  {f.description}
-                </p>
-              </div>
-            </ScrollReveal>
-          ))}
-        </section>
+              </ScrollReveal>
+            ))}
+          </section>
+        ) : null}
 
         {/* How it works (full width) */}
-        <section className="mt-4 px-4 sm:px-6 lg:mt-6 lg:px-20">
-          <ScrollReveal>
-            <div className="rounded-[24px] bg-[#F2F2F2] p-6 sm:p-8 lg:rounded-[30px] lg:p-10 transition-all hover:shadow-xl">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#8169FF]/10 px-4 py-1.5 text-[12px] font-bold uppercase tracking-wider text-[#8169FF]">
-                How it works
-              </div>
-              <h2 className="mt-4 font-heading text-[28px] font-bold text-black sm:text-[32px]">
-                A simple flow, end-to-end.
-              </h2>
+        {product.slug === "digital-payments" ? (
+          <DigitalPaymentsFlow />
+        ) : product.slug === "billing-infrastructure" ? (
+          <BillingFlow />
+        ) : product.slug === "payment-link" ? (
+          <PaymentLinkFlow />
+        ) : product.slug === "edc-payment-solutions" ? (
+          <EDCFlow />
+        ) : product.steps.length === 0 ? null : (
+          <section className="mt-4 px-4 sm:px-6 lg:mt-6 lg:px-20">
+            <ScrollReveal>
+              <div className="rounded-[24px] bg-[#F2F2F2] p-6 sm:p-8 lg:rounded-[30px] lg:p-10 transition-all hover:shadow-xl">
+                <div className="inline-flex items-center gap-2 rounded-full bg-[#8169FF]/10 px-4 py-1.5 text-[12px] font-bold uppercase tracking-wider text-[#8169FF]">
+                  How it works
+                </div>
+                <h2 className="mt-4 font-heading text-[28px] font-bold text-black sm:text-[32px]">
+                  A simple flow, end-to-end.
+                </h2>
 
-              <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
-                {product.steps.map((s, i) => (
-                  <li
-                    key={s.title}
-                    className="group relative flex flex-col rounded-2xl bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
-                  >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#8169FF] to-[#A486FF] font-heading text-[18px] font-bold text-white">
-                      {i + 1}
-                    </div>
-                    <h3 className="mt-5 font-heading text-[16px] font-bold text-black transition-colors group-hover:text-[#8169FF]">
-                      {s.title}
-                    </h3>
-                    <p className="mt-2 text-[14px] leading-relaxed text-[#515A5E]">
-                      {s.description}
-                    </p>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </ScrollReveal>
-        </section>
+                <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+                  {product.steps.map((s, i) => (
+                    <li
+                      key={s.title}
+                      className="group relative flex flex-col rounded-2xl bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
+                    >
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#8169FF] to-[#A486FF] font-heading text-[18px] font-bold text-white">
+                        {i + 1}
+                      </div>
+                      <h3 className="mt-5 font-heading text-[16px] font-bold text-black transition-colors group-hover:text-[#8169FF]">
+                        {s.title}
+                      </h3>
+                      <p className="mt-2 text-[14px] leading-relaxed text-[#515A5E]">
+                        {s.description}
+                      </p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </ScrollReveal>
+          </section>
+        )}
 
         {/* Built for these teams + Why Choose */}
-        <section className="mt-4 grid grid-cols-1 items-stretch gap-4 px-4 sm:gap-6 sm:px-6 lg:mt-6 lg:grid-cols-2 lg:px-20">
-          <ScrollReveal className="h-full">
-            <div className="flex h-full flex-col rounded-[24px] bg-[#E4EEFA] p-6 sm:p-8 lg:rounded-[30px] lg:p-10 transition-all hover:shadow-xl">
-              <div className="inline-flex w-fit items-center gap-2 rounded-full bg-[#8169FF]/10 px-4 py-1.5 text-[12px] font-bold uppercase tracking-wider text-[#8169FF]">
-                Use Cases
+        {product.useCaseCards ? (
+          <>
+            <section className="mt-4 px-4 sm:px-6 lg:mt-6 lg:px-20">
+              <ScrollReveal>
+                <div className="rounded-[24px] bg-[#E4EEFA] p-6 sm:p-8 lg:rounded-[30px] lg:p-10">
+                  <div className="inline-flex w-fit items-center gap-2 rounded-full bg-[#8169FF]/10 px-4 py-1.5 text-[12px] font-bold uppercase tracking-wider text-[#8169FF]">
+                    {product.useCasesEyebrow ?? "Use Cases"}
+                  </div>
+                  <h2 className="mt-4 max-w-[860px] font-heading text-[24px] font-extrabold leading-[1.2] text-black sm:text-[30px] lg:text-[34px]">
+                    {product.useCasesTitle}
+                  </h2>
+                  {product.useCasesSubtitle && (
+                    <p className="mt-3 max-w-[820px] text-[14px] leading-relaxed text-[#2b2f38] sm:text-[15px] lg:text-[16px]">
+                      {product.useCasesSubtitle}
+                    </p>
+                  )}
+
+                  <div className="mt-7 grid gap-4 sm:mt-8 sm:grid-cols-2 lg:gap-5">
+                    {product.useCaseCards.map((c, i) => (
+                      <ScrollReveal key={c.title} delay={i * 80}>
+                        <article className="group h-full rounded-2xl bg-white p-5 transition-all hover:-translate-y-1 hover:shadow-lg sm:p-6">
+                          <div className="flex items-start gap-3">
+                            <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#A486FF]/15 text-[#8169FF] transition-colors group-hover:bg-[#8169FF] group-hover:text-white">
+                              <Check className="h-4 w-4" strokeWidth={3} />
+                            </span>
+                            <h3 className="font-heading text-[15px] font-extrabold leading-snug text-black sm:text-[16px]">
+                              {c.title}
+                            </h3>
+                          </div>
+                          <p className="mt-3 pl-[48px] text-[13px] leading-relaxed text-[#515A5E] sm:text-[14px]">
+                            {c.description}
+                          </p>
+                        </article>
+                      </ScrollReveal>
+                    ))}
+                  </div>
+                </div>
+              </ScrollReveal>
+            </section>
+
+            <section className="mt-4 px-4 sm:px-6 lg:mt-6 lg:px-20">
+              <ScrollReveal>
+                <WhyChooseCard cols={4} />
+              </ScrollReveal>
+            </section>
+          </>
+        ) : (
+          <section className="mt-4 grid grid-cols-1 items-stretch gap-4 px-4 sm:gap-6 sm:px-6 lg:mt-6 lg:grid-cols-2 lg:px-20">
+            <ScrollReveal className="h-full">
+              <div className="flex h-full flex-col rounded-[24px] bg-[#E4EEFA] p-6 sm:p-8 lg:rounded-[30px] lg:p-10 transition-all hover:shadow-xl">
+                <div className="inline-flex w-fit items-center gap-2 rounded-full bg-[#8169FF]/10 px-4 py-1.5 text-[12px] font-bold uppercase tracking-wider text-[#8169FF]">
+                  Use Cases
+                </div>
+                <h2 className="mt-4 font-heading text-[24px] font-bold text-black sm:text-[28px]">
+                  Built for these teams
+                </h2>
+
+                <ul className="mt-7 grid flex-1 content-start gap-3 sm:grid-cols-2">
+                  {product.useCases.map((u) => (
+                    <li
+                      key={u}
+                      className="flex items-center gap-3 rounded-2xl bg-white px-4 py-3 transition-all hover:bg-[#8169FF] hover:text-white"
+                    >
+                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#A486FF]/15 text-[#8169FF]">
+                        <Check className="h-4 w-4" strokeWidth={3} />
+                      </span>
+                      <span className="text-[14px] font-semibold">{u}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h2 className="mt-4 font-heading text-[24px] font-bold text-black sm:text-[28px]">
-                Built for these teams
-              </h2>
+            </ScrollReveal>
 
-              <ul className="mt-7 grid flex-1 content-start gap-3 sm:grid-cols-2">
-                {product.useCases.map((u) => (
-                  <li
-                    key={u}
-                    className="flex items-center gap-3 rounded-2xl bg-white px-4 py-3 transition-all hover:bg-[#8169FF] hover:text-white"
-                  >
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#A486FF]/15 text-[#8169FF]">
-                      <Check className="h-4 w-4" strokeWidth={3} />
-                    </span>
-                    <span className="text-[14px] font-semibold">{u}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={120} className="h-full">
-            <WhyChooseCard cols={2} />
-          </ScrollReveal>
-        </section>
+            <ScrollReveal delay={120} className="h-full">
+              <WhyChooseCard cols={2} />
+            </ScrollReveal>
+          </section>
+        )}
 
         {/* Airpay for Business — Digital Payments only */}
         {product.slug === "digital-payments" && <AirpayForBusiness />}

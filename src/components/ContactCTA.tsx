@@ -30,7 +30,7 @@ export function ContactCTA() {
 
             <div className="flex flex-col gap-4">
               <a
-                href="https://wa.me/6281959771654"
+                href="https://wa.me/6285953822675"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between gap-6 rounded-2xl bg-white/15 p-5 backdrop-blur-md transition-all hover:bg-white hover:text-[#8169FF] hover:scale-[1.02]">
@@ -43,7 +43,7 @@ export function ContactCTA() {
                       Contact Sales
                     </span>
                     <span className="text-[15px] font-semibold">
-                      WhatsApp · +62 819-5977-1654
+                      WhatsApp · +62 85953822675
                     </span>
                   </span>
                 </span>

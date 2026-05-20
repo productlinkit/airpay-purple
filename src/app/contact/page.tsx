@@ -23,14 +23,14 @@ const channels = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+62 819-5977-1654",
-    href: "https://wa.me/6281959771654",
+    value: "+62 85953822675",
+    href: "https://wa.me/6285953822675",
   },
   {
     icon: Phone,
     label: "Sales",
-    value: "+62 819-5977-1654",
-    href: "tel:+6281959771654",
+    value: "+62 85953822675",
+    href: "tel:+6285953822675",
   },
 ];
 
@@ -248,7 +248,7 @@ export default function ContactPage() {
                   opportunities.
                 </p>
                 <a
-                  href="https://wa.me/6281959771654"
+                  href="https://wa.me/6285953822675"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group mt-7 inline-flex items-center gap-3 rounded-full bg-white py-2 pl-7 pr-2 text-[15px] font-bold text-[#8169FF] transition-all hover:scale-105">

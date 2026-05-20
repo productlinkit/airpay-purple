@@ -27,7 +27,7 @@ const items: MobileNavItem[] = [
         href: "/products/direct-carrier-billing",
       },
       {
-        label: "Digital Payments (Pay-In & Pay-Out)",
+        label: "Payments & Disbursements",
         href: "/products/digital-payments",
       },
       {
@@ -39,8 +39,8 @@ const items: MobileNavItem[] = [
         href: "/products/edc-payment-solutions",
       },
       {
-        label: "Cross-Border Payments",
-        href: "/products/cross-border-payments",
+        label: "Payment Link",
+        href: "/products/payment-link",
       },
     ],
   },
@@ -180,16 +180,20 @@ export function MobileMenu({ size = "md" }: MobileMenuProps) {
                               {item.items.map((sub) => {
                                 const isExternal = sub.href.startsWith("http");
                                 return (
-                                <li key={sub.label}>
-                                  <Link
-                                    href={sub.href}
-                                    onClick={close}
-                                    target={isExternal ? "_blank" : undefined}
-                                    rel={isExternal ? "noopener noreferrer" : undefined}
-                                    className="block rounded-xl border-l-2 border-[#A486FF]/30 px-4 py-2.5 text-[14px] font-semibold text-[#2b2f38] transition-colors hover:border-[#8169FF] hover:bg-[#E4EEFA] hover:text-[#8169FF]">
-                                    {sub.label}
-                                  </Link>
-                                </li>
+                                  <li key={sub.label}>
+                                    <Link
+                                      href={sub.href}
+                                      onClick={close}
+                                      target={isExternal ? "_blank" : undefined}
+                                      rel={
+                                        isExternal
+                                          ? "noopener noreferrer"
+                                          : undefined
+                                      }
+                                      className="block rounded-xl border-l-2 border-[#A486FF]/30 px-4 py-2.5 text-[14px] font-semibold text-[#2b2f38] transition-colors hover:border-[#8169FF] hover:bg-[#E4EEFA] hover:text-[#8169FF]">
+                                      {sub.label}
+                                    </Link>
+                                  </li>
                                 );
                               })}
                             </ul>

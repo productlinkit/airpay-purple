@@ -1,21 +1,25 @@
-import Image from "next/image";
 import {
   RadioTower,
-  CreditCard,
   User as UserIcon,
   Smartphone,
   Wallet,
   ShieldCheck,
-  Network,
-  Globe,
-  Lock,
-  TrendingUp,
   Building2,
   ShoppingBag,
   Gamepad2,
-  Repeat2,
   Film,
-  ArrowRight,
+  Lock,
+  Send,
+  FilePlus2,
+  Shuffle,
+  CheckCircle2,
+  Landmark,
+  Bell,
+  BarChart3,
+  Puzzle,
+  Globe,
+  TrendingUp,
+  ChevronRight,
   type LucideIcon,
 } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
@@ -26,268 +30,338 @@ type Step = {
   description: string;
 };
 
-const dcbSteps: Step[] = [
-  {
-    icon: UserIcon,
-    title: "User selects mobile billing",
-    description: "Customer chooses to pay using their mobile balance.",
-  },
+type FlowRow = {
+  icon: LucideIcon;
+  title: string;
+  subtitle: string;
+  shield: string;
+  steps: Step[];
+};
+
+const flowRows: FlowRow[] = [
   {
     icon: RadioTower,
-    title: "Airpay connects to telco",
-    description: "We securely connect and validate with the mobile operator.",
-  },
-  {
-    icon: Smartphone,
-    title: "Charged to mobile balance",
-    description: "The amount is charged directly to the user's mobile balance.",
+    title: "Digital Carrier Billing (DCB)",
+    subtitle: "Let users pay using their mobile balance.",
+    shield:
+      "Secure, fast, and seamless payments directly through mobile operators.",
+    steps: [
+      {
+        icon: UserIcon,
+        title: "User selects mobile billing",
+        description: "Customer chooses to pay using their mobile balance.",
+      },
+      {
+        icon: RadioTower,
+        title: "Airpay connects to telco",
+        description:
+          "We securely connect and validate with the mobile operator.",
+      },
+      {
+        icon: Smartphone,
+        title: "Charged to mobile balance",
+        description:
+          "The amount is charged directly to the user’s mobile balance.",
+      },
+      {
+        icon: CheckCircle2,
+        title: "Payment confirmed",
+        description: "Payment is authorized and confirmed in real-time.",
+      },
+      {
+        icon: Landmark,
+        title: "Settlement to merchant",
+        description: "Payment is settled to the merchant securely and on time.",
+      },
+    ],
   },
   {
     icon: Wallet,
-    title: "Settlement to merchant",
-    description: "Payment is settled to the merchant securely.",
+    title: "Digital Payment",
+    subtitle: "Accept payments via multiple methods and channels.",
+    shield: "All major payment methods. One integration. Global reach.",
+    steps: [
+      {
+        icon: UserIcon,
+        title: "User selects payment method",
+        description: "Customer chooses their preferred payment method.",
+      },
+      {
+        icon: Shuffle,
+        title: "Airpay routes to channel",
+        description: "We route the payment to the best available channel.",
+      },
+      {
+        icon: Lock,
+        title: "Payment processed",
+        description: "The payment is authorized and processed securely.",
+      },
+      {
+        icon: CheckCircle2,
+        title: "Payment confirmed",
+        description:
+          "Transaction status is updated in real-time to your system.",
+      },
+      {
+        icon: Landmark,
+        title: "Settlement to merchant",
+        description: "Funds are settled to the merchant quickly and securely.",
+      },
+    ],
   },
-];
-
-const digitalSteps: Step[] = [
   {
-    icon: UserIcon,
-    title: "User selects payment method",
-    description: "Customer chooses their preferred payment method.",
-  },
-  {
-    icon: Network,
-    title: "Airpay routes to channel",
-    description: "We route the payment to the best available channel.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Payment processed",
-    description: "The payment is authorized and processed successfully.",
-  },
-  {
-    icon: Wallet,
-    title: "Settlement to merchant",
-    description: "Funds are settled to the merchant quickly and securely.",
+    icon: Send,
+    title: "Disbursement (Payout)",
+    subtitle: "Send funds easily to bank accounts, e-wallets, and VA.",
+    shield: "Reliable payouts with smart routing and real-time tracking.",
+    steps: [
+      {
+        icon: FilePlus2,
+        title: "Create payout",
+        description:
+          "Initiate payout via API or dashboard. Upload or input beneficiary details.",
+      },
+      {
+        icon: Shuffle,
+        title: "Airpay validates & routes",
+        description:
+          "We validate account/wallet details and route to the best channel.",
+      },
+      {
+        icon: Send,
+        title: "Funds disbursed",
+        description: "Funds are sent to bank account, e-wallet, or VA.",
+      },
+      {
+        icon: Bell,
+        title: "Payout completed",
+        description:
+          "Beneficiary receives funds and status is updated in real-time.",
+      },
+      {
+        icon: BarChart3,
+        title: "Track & reconcile",
+        description:
+          "Monitor payout status, history, and reports in one dashboard.",
+      },
+    ],
   },
 ];
 
 const features: { icon: LucideIcon; title: string; subtitle: string }[] = [
   {
-    icon: Lock,
+    icon: Puzzle,
     title: "One Integration",
-    subtitle: "Access DCB and 100+ payment methods",
+    subtitle:
+      "Integrate once and access DCB, payments, and disbursements through a single API.",
   },
   {
     icon: Globe,
     title: "Global Reach",
-    subtitle: "Connect to telcos and payment channels worldwide",
+    subtitle:
+      "Connect to 85+ payment channels, 100+ telcos, and banks across 15+ countries.",
   },
   {
     icon: ShieldCheck,
-    title: "Secure & Reliable",
-    subtitle: "Bank-grade security and 99.9% uptime",
+    title: "Secure & Compliant",
+    subtitle:
+      "Bank-grade security with PCI DSS compliance and end-to-end encryption.",
   },
   {
     icon: TrendingUp,
-    title: "Higher Success Rate",
-    subtitle: "Smart routing for better approval rates",
+    title: "Higher Success",
+    subtitle:
+      "Smart routing and real-time monitoring for higher approval rates and fewer failures.",
   },
 ];
 
-const audiences = [
-  { icon: Building2, label: "Fintech Platforms" },
-  { icon: ShoppingBag, label: "Digital Marketplaces" },
-  { icon: Gamepad2, label: "Gaming & Entertainment" },
-  { icon: Film, label: "Streaming & Digital Media" },
+const audiences: { icon: LucideIcon; label: string; description: string }[] = [
+  {
+    icon: Building2,
+    label: "Fintech & Digital Financial Services",
+    description:
+      "Enable scalable payment experiences, localized transactions, and seamless financial connectivity across emerging and global markets.",
+  },
+  {
+    icon: Gamepad2,
+    label: "Gaming, Entertainment & Interactive Platforms",
+    description:
+      "Maximize user reach and monetization through frictionless Digital Carrier Billing and localized digital payment experiences.",
+  },
+  {
+    icon: Film,
+    label: "Streaming, Subscription & Digital Content",
+    description:
+      "Deliver seamless recurring billing and optimized payment accessibility designed for mobile-first digital audiences.",
+  },
+  {
+    icon: ShoppingBag,
+    label: "Digital Commerce & Online Marketplaces",
+    description:
+      "Accelerate global expansion through connected payment ecosystems, alternative payment methods, and enterprise-grade transaction infrastructure.",
+  },
 ];
 
 export function NewsCTA() {
   return (
-    <section className="mt-4 grid grid-cols-1 gap-4 px-3 sm:gap-6 sm:px-6 lg:mt-6 lg:grid-cols-3 lg:px-20">
-      {/* How It Works card */}
-      <ScrollReveal className="lg:col-span-2">
-        <div className="h-full rounded-[20px] bg-[#F5F5F7] p-5 sm:rounded-[24px] sm:p-8 lg:rounded-[30px] lg:p-10">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#8169FF]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#8169FF] sm:px-4 sm:py-1.5 sm:text-[12px]">
-            How It Works
-          </div>
-          <h2 className="mt-3 font-heading text-[22px] font-extrabold leading-[1.15] text-black sm:mt-4 sm:text-[32px] lg:text-[36px]">
-            From checkout to settlement —<br />
-            DCB &amp; Digital Payment,{" "}
-            <span className="bg-gradient-to-r from-[#7E5BFF] via-[#9F7CFF] to-[#B47BFF] bg-clip-text text-transparent">
-              one flow.
-            </span>
-          </h2>
-          <p className="mt-2 max-w-[560px] text-[13px] leading-relaxed text-[#515A5E] sm:mt-3 sm:text-[15px]">
-            Airpay simplifies payments with two powerful solutions through a
-            single integration.
-          </p>
-
-          {/* Two flow columns */}
-          <div className="mt-5 grid grid-cols-1 gap-4 sm:mt-7 lg:mt-8 lg:grid-cols-2 lg:gap-5">
-            <ScrollReveal>
-              <FlowColumn
-                accent="purple"
-                headerIcon={RadioTower}
-                title="Digital Carrier Billing (DCB)"
-                subtitle="Let users pay using their mobile balance."
-                steps={dcbSteps}
-              />
-            </ScrollReveal>
-            <ScrollReveal delay={120}>
-              <FlowColumn
-                accent="purple"
-                headerIcon={CreditCard}
-                title="Digital Payment"
-                subtitle="Accept payments via multiple methods and channels."
-                steps={digitalSteps}
-              />
-            </ScrollReveal>
+    <section className="mt-4 grid grid-cols-1 gap-4 px-3 sm:gap-6 sm:px-6 lg:mt-6 lg:px-20">
+      {/* How It Works — full width */}
+      <ScrollReveal>
+        <div className="rounded-[20px] bg-[#F5F5F7] p-5 sm:rounded-[24px] sm:p-8 lg:rounded-[30px] lg:p-10">
+          {/* Header */}
+          <div className="text-center">
+            <div className="inline-flex w-fit items-center gap-2 rounded-full bg-[#8169FF]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#8169FF] sm:px-4 sm:py-1.5 sm:text-[12px]">
+              How It Works
+            </div>
+            <h2 className="mx-auto mt-3 max-w-[820px] font-heading text-[22px] font-extrabold leading-[1.15] text-black sm:mt-4 sm:text-[32px] lg:text-[40px]">
+              From Checkout to Payout,
+              <br className="hidden sm:block" />{" "}
+              <span className="">One Unified Payment Ecosystem.</span>
+            </h2>
+            <p className="mx-auto mt-2 max-w-[680px] text-[13px] leading-relaxed text-[#515A5E] sm:mt-3 sm:text-[15px]">
+              Airpay simplifies Digital Carrier Billing, payments,
+              disbursements, and merchant operations through scalable
+              infrastructure built for global commerce.
+            </p>
           </div>
 
-          {/* Feature pills */}
-          <div className="mt-4 grid grid-cols-1 gap-4 rounded-[16px] bg-white p-4 sm:mt-5 sm:grid-cols-2 sm:rounded-[20px] sm:p-6 lg:mt-6 lg:grid-cols-4 lg:gap-4 lg:p-6">
-            {features.map((f) => (
-              <div key={f.title} className="flex items-start gap-3">
-                <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-[#8169FF]/12 text-[#8169FF]">
-                  <f.icon className="h-5 w-5" />
-                </span>
-                <div className="leading-tight">
-                  <div className="font-heading text-[14px] font-bold text-black">
-                    {f.title}
-                  </div>
-                  <div className="mt-1 text-[12px] leading-snug text-[#515A5E]">
-                    {f.subtitle}
+          {/* 3 flow rows */}
+          <div className="mt-6 space-y-4 sm:mt-8 sm:space-y-5">
+            {flowRows.map((row, i) => (
+              <ScrollReveal key={row.title} delay={i * 100}>
+                <FlowRowCard row={row} />
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* Bottom feature strip */}
+          <div className="mt-6 rounded-2xl bg-white p-5 sm:mt-8 sm:p-6 lg:mt-10">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+              {features.map((f) => (
+                <div key={f.title} className="flex items-start gap-3">
+                  <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-[#8169FF]/15 text-[#8169FF]">
+                    <f.icon className="h-5 w-5" />
+                  </span>
+                  <div className="leading-tight">
+                    <div className="font-heading text-[13px] font-extrabold text-black sm:text-[14px]">
+                      {f.title}
+                    </div>
+                    <div className="mt-1 text-[11px] leading-snug text-[#515A5E] sm:text-[12px]">
+                      {f.subtitle}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </ScrollReveal>
 
-      {/* Who Airpay Is Built For */}
-      <ScrollReveal delay={160} className="lg:col-span-1">
-        <div className="relative flex h-full flex-col overflow-hidden rounded-[20px] bg-[#E4EEFA] p-5 transition-all hover:shadow-xl sm:rounded-[24px] sm:p-8 lg:rounded-[30px] lg:p-10">
+      {/* Who Airpay Is Built For — full width below */}
+      <ScrollReveal delay={120}>
+        <div className="relative flex flex-col overflow-hidden rounded-[20px] bg-[#E4EEFA] p-5 transition-all hover:shadow-xl sm:rounded-[24px] sm:p-8 lg:rounded-[30px] lg:p-10">
           <div className="inline-flex w-fit items-center gap-2 rounded-full bg-[#8169FF]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#8169FF] sm:px-4 sm:py-1.5 sm:text-[12px]">
             Built For
           </div>
-          <h2 className="mt-3 font-heading text-[22px] font-extrabold leading-[1.2] text-black sm:mt-4 sm:text-[26px]">
-            Who Airpay is built for
+          <h2 className="mt-3 max-w-[820px] font-heading text-[22px] font-extrabold leading-[1.2] text-black sm:mt-4 sm:text-[26px] lg:text-[30px]">
+            From Checkout to Payout, One Unified Payment Ecosystem.
           </h2>
-          <p className="mt-2 text-[13px] leading-relaxed text-[#2b2f38] sm:mt-3 sm:text-[15px]">
-            Powering modern businesses with flexible infrastructure for
-            payments, payouts, and carrier billing.
+          <p className="mt-2 max-w-[820px] text-[13px] leading-relaxed text-[#2b2f38] sm:mt-3 sm:text-[15px]">
+            Airpay simplifies Digital Carrier Billing, payments, disbursements,
+            and merchant operations through scalable infrastructure built for
+            global commerce.
           </p>
 
-          <ul className="mt-5 space-y-2.5 sm:mt-6">
+          <ul className="mt-5 grid gap-3 sm:mt-6 lg:grid-cols-2 lg:gap-4">
             {audiences.map((a, i) => (
               <ScrollReveal key={a.label} delay={i * 60}>
-                <li className="group flex items-center gap-3 rounded-2xl bg-white px-4 py-3 transition-all hover:bg-[#8169FF] hover:text-white hover:scale-[1.02] hover:shadow-md">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#A486FF]/15 text-[#8169FF] transition-colors group-hover:bg-white/25 group-hover:text-white">
-                    <a.icon className="h-4 w-4" />
-                  </span>
-                  <span className="text-[14px] font-semibold text-black transition-colors group-hover:text-white">
-                    {a.label}
-                  </span>
-                  <ArrowRight className="ml-auto h-4 w-4 opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100" />
+                <li className="h-full rounded-2xl bg-white p-4 transition-all hover:shadow-md sm:p-5">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#A486FF]/15 text-[#8169FF]">
+                      <a.icon className="h-4 w-4" />
+                    </span>
+                    <span className="text-[13px] font-semibold leading-snug text-black sm:text-[14px]">
+                      {a.label}
+                    </span>
+                  </div>
+                  <p className="mt-3 pl-[48px] text-[12px] leading-relaxed text-[#515A5E] sm:text-[13px]">
+                    {a.description}
+                  </p>
                 </li>
               </ScrollReveal>
             ))}
           </ul>
-
-          {/* Bottom illustration — enlarged & pulled up */}
-          <div className="relative mt-4 h-[260px] w-full overflow-hidden rounded-[24px] sm:mt-6 sm:h-[300px] sm:rounded-[28px] lg:h-[340px] lg:rounded-[32px]">
-            <Image
-              src="/images/photos/image_scan.webp"
-              alt="Airpay infrastructure"
-              width={640}
-              height={640}
-              className="absolute left-1/2 top-0 h-auto w-[360px] max-w-none -translate-x-1/2 drop-shadow-[0_12px_30px_rgba(80,60,180,0.18)] sm:w-[440px] lg:w-[560px]"
-            />
-          </div>
         </div>
       </ScrollReveal>
     </section>
   );
 }
 
-function FlowColumn({
-  accent,
-  headerIcon: HeaderIcon,
-  title,
-  subtitle,
-  steps,
-}: {
-  accent: "purple" | "pink";
-  headerIcon: LucideIcon;
-  title: string;
-  subtitle: string;
-  steps: Step[];
-}) {
-  const isPurple = accent === "purple";
-  const accentText = isPurple ? "text-[#8169FF]" : "text-[#E64681]";
-  const headerIconBg = isPurple ? "bg-[#8169FF]/12" : "bg-[#E64681]/12";
-  const stepIconBg = isPurple ? "bg-[#8169FF]/10" : "bg-[#E64681]/10";
-  const numberBg = isPurple ? "bg-[#8169FF]" : "bg-[#E64681]";
-  const ringColor = isPurple ? "ring-[#8169FF]/15" : "ring-[#E64681]/15";
-  const dotColor = isPurple ? "bg-[#8169FF]/30" : "bg-[#E64681]/30";
+/* ─────────────────────── Flow Row ─────────────────────── */
 
+function FlowRowCard({ row }: { row: FlowRow }) {
   return (
-    <div
-      className={`flex h-full flex-col rounded-[24px] bg-white p-5 ring-1 ${ringColor} sm:p-6`}>
-      {/* Column header */}
-      <div className="flex items-start gap-3">
-        <span
-          className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl ${headerIconBg} ${accentText}`}>
-          <HeaderIcon className="h-5 w-5" />
-        </span>
-        <div>
-          <h3
-            className={`font-heading text-[16px] font-extrabold leading-tight ${accentText} sm:text-[18px]`}>
-            {title}
-          </h3>
-          <p className="mt-1.5 text-[12px] leading-snug text-[#515A5E] sm:text-[13px]">
-            {subtitle}
-          </p>
-        </div>
-      </div>
-
-      {/* Steps */}
-      <ol className="mt-5 space-y-2.5">
-        {steps.map((step, i) => (
-          <li key={step.title} className="relative flex items-start gap-3">
-            {/* Step icon column with vertical dotted connector */}
-            <div className="flex flex-col items-center">
-              <span
-                className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl ${stepIconBg} ${accentText}`}>
-                <step.icon className="h-4 w-4" />
-              </span>
-              {i < steps.length - 1 && (
-                <span
-                  className={`my-1 h-3 w-px border-l-2 border-dashed ${dotColor.replace("bg-", "border-")}`}
-                />
-              )}
-            </div>
-
-            {/* Step body */}
-            <div className="flex-1 rounded-2xl bg-[#F8F8FB] p-3.5 transition-all hover:bg-white hover:shadow-md">
-              <div className="flex items-center gap-2">
-                <span
-                  className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full ${numberBg} font-heading text-[10px] font-bold text-white`}>
-                  {i + 1}
-                </span>
-                <h4 className="font-heading text-[13px] font-bold leading-tight text-black sm:text-[14px]">
-                  {step.title}
-                </h4>
-              </div>
-              <p className="mt-1.5 text-[11px] leading-snug text-[#515A5E] sm:text-[12px]">
-                {step.description}
+    <div className="rounded-[20px] bg-gradient-to-br from-[#F5F0FF] to-[#EDE5FF] p-4 sm:rounded-[24px] sm:p-5 lg:p-6">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[260px_1fr] lg:gap-5">
+        {/* Left — summary */}
+        <div className="flex flex-col gap-3">
+          <div className="flex items-start gap-3">
+            <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-[#8169FF]/15 text-[#8169FF]">
+              <row.icon className="h-5 w-5" />
+            </span>
+            <div className="leading-tight">
+              <h3 className="font-heading text-[15px] font-extrabold text-[#5a3fdb] sm:text-[16px]">
+                {row.title}
+              </h3>
+              <p className="mt-1 text-[12px] leading-snug text-[#1f2230] sm:text-[13px]">
+                {row.subtitle}
               </p>
             </div>
-          </li>
-        ))}
-      </ol>
+          </div>
+
+          <div className="flex items-start gap-2 rounded-xl bg-white/65 px-3 py-2 backdrop-blur-sm">
+            <ShieldCheck className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-[#8169FF]" />
+            <p className="text-[11px] leading-snug text-[#515A5E] sm:text-[12px]">
+              {row.shield}
+            </p>
+          </div>
+        </div>
+
+        {/* Right — 5 step cards */}
+        <div className="flex flex-col gap-2 sm:grid sm:grid-cols-2 sm:gap-3 lg:flex lg:flex-row lg:items-stretch lg:gap-1.5 xl:gap-2">
+          {row.steps.map((s, i) => (
+            <FlowItem key={s.title}>
+              <article className="relative flex h-full flex-1 flex-col items-center rounded-2xl bg-white p-3 shadow-[0_4px_12px_rgba(80,60,180,0.06)] sm:p-4">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-[#8169FF] to-[#A486FF] font-heading text-[10px] font-extrabold text-white shadow-[0_4px_10px_rgba(128,105,255,0.30)] sm:h-7 sm:w-7 sm:text-[11px]">
+                  {i + 1}
+                </span>
+                <span className="mt-2 flex h-10 w-10 items-center justify-center rounded-full bg-[#8169FF]/10 text-[#8169FF] sm:h-12 sm:w-12">
+                  <s.icon className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={1.8} />
+                </span>
+                <h4 className="mt-2 text-center font-heading text-[11px] font-extrabold leading-tight text-black sm:text-[12px]">
+                  {s.title}
+                </h4>
+                <p className="mt-1.5 text-center text-[10px] leading-snug text-[#515A5E] sm:text-[11px]">
+                  {s.description}
+                </p>
+              </article>
+
+              {i < row.steps.length - 1 && (
+                <div className="hidden flex-shrink-0 items-center justify-center lg:flex">
+                  <ChevronRight
+                    className="h-4 w-4 text-[#8169FF]/60"
+                    strokeWidth={2.5}
+                  />
+                </div>
+              )}
+            </FlowItem>
+          ))}
+        </div>
+      </div>
     </div>
   );
+}
+
+function FlowItem({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
 }

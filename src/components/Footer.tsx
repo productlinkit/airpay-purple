@@ -9,7 +9,7 @@ const footerColumns: { title: string; links: string[] }[] = [
       "Digital Payments (Pay-In & Pay-Out)",
       "Billing Infrastructure",
       "EDC Payment Solutions",
-      "Cross-Border Payments",
+      "Payment Link",
     ],
   },
   {

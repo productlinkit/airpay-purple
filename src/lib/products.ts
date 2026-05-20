@@ -13,6 +13,7 @@ import {
   Layers,
   Banknote,
   ScanLine,
+  Link2,
   type LucideIcon,
 } from "lucide-react";
 
@@ -23,6 +24,11 @@ export interface ProductFeature {
 }
 
 export interface ProductStep {
+  title: string;
+  description: string;
+}
+
+export interface ProductUseCaseCard {
   title: string;
   description: string;
 }
@@ -40,6 +46,10 @@ export interface ProductDetail {
   features: ProductFeature[];
   steps: ProductStep[];
   useCases: string[];
+  useCasesEyebrow?: string;
+  useCasesTitle?: string;
+  useCasesSubtitle?: string;
+  useCaseCards?: ProductUseCaseCard[];
 }
 
 export const products: ProductDetail[] = [
@@ -48,12 +58,12 @@ export const products: ProductDetail[] = [
     name: "Digital Carrier Billing",
     shortName: "DCB",
     eyebrow: "Carrier Billing",
-    tagline: "Let users pay through their phone bill.",
+    tagline: "Seamless Mobile Payments Through Global Carrier Connectivity",
     description:
-      "Enable mobile carrier billing and let users pay directly through their mobile phone bills. With one integration, access multiple telecom operators and unlock new revenue opportunities across global markets.",
-    illustration: "/images/photos/image_dcb.webp",
+      "Enable frictionless mobile payment experiences through Airpay’s enterprise-grade Digital Carrier Billing infrastructure. Connect to global telecom operators, expand across high-growth markets, and empower users to pay seamlessly through their mobile carriers with one unified integration.",
+    illustration: "/images/new/dcb-hero.webp",
     icon: Radio,
-    highlights: ["100+ telco operators", "20+ countries", "No card required"],
+    highlights: ["50+ telco operators", "15+ countries"],
     features: [
       {
         icon: Smartphone,
@@ -110,47 +120,48 @@ export const products: ProductDetail[] = [
     slug: "digital-payments",
     name: "Digital Payment Solutions",
     shortName: "Digital Payments",
-    eyebrow: "Pay-In & Pay-Out",
-    tagline: "Modern pay-in and payout infrastructure for growing businesses.",
+    eyebrow: "Payments & Disbursements",
+    tagline: "Powering Seamless Global Commerce Through Localized Payments",
     description:
-      "Accept payments and manage payouts seamlessly through a unified platform supporting QRIS, virtual accounts, e-wallets, cards, bank transfers, and local payment rails.",
+      "Enable frictionless pay-in and payout experiences through Airpay’s enterprise-grade digital payment infrastructure. Connect to localized payment ecosystems including QR, virtual accounts, e-wallets, bank transfers, cards, and alternative payment methods through one unified integration designed for scalable global growth.",
     illustration: "/images/photos/image_payment.webp",
     icon: Wallet,
     highlights: [
-      "Multi-Channel Payments",
-      "Pay-In & Pay-Out",
-      "Fast & Secure Settlement",
+      "Localized Payment Connectivity",
+      "Unified Pay-In & Disbursement Infrastructure",
+      "Scalable & Reliable Transaction Processing",
     ],
     features: [
       {
         icon: Wallet,
-        title: "Unified Payment Infrastructure",
+        title: "Connected Payment Infrastructure",
         description:
-          "Enable seamless payment acceptance across QRIS, e-wallets, virtual accounts, cards, and bank transfers through a single integration.",
+          "Power localized payment experiences through one unified ecosystem built for scalable global commerce.",
       },
       {
         icon: Repeat,
-        title: "Scalable Payout Network",
+        title: "Scalable Global Disbursements",
         description:
-          "Automate and streamline payouts to banks and digital wallets with enterprise-grade reliability.",
+          "Enable seamless payouts and fund distribution across banking networks and digital payment ecosystems worldwide.",
       },
       {
         icon: Zap,
-        title: "Real-Time Transaction Flow",
+        title: "Intelligent Transaction Operations",
         description:
-          "Monitor payment activity, settlement status, and transaction performance with real-time visibility.",
+          "Optimize payment visibility, transaction monitoring, and settlement performance through real-time infrastructure.",
       },
       {
         icon: ShieldCheck,
-        title: "Enterprise Security & Compliance",
+        title: "Secure Infrastructure for Digital Commerce",
         description:
-          "Built with PCI-DSS standards, intelligent fraud protection, tokenization, and secure authentication layers.",
+          "Enterprise-grade protection and compliance designed to support secure, scalable, and reliable payment operations.",
       },
     ],
     steps: [
       {
         title: "Customer chooses payment method",
-        description: "Cards, wallets, virtual accounts, or QR — local options first.",
+        description:
+          "Cards, wallets, virtual accounts, or QR — local options first.",
       },
       {
         title: "Authentication & authorization",
@@ -162,7 +173,8 @@ export const products: ProductDetail[] = [
       },
       {
         title: "Pay-out execution",
-        description: "Send payouts to recipients via local bank or wallet rails.",
+        description:
+          "Send payouts to recipients via local bank or wallet rails.",
       },
     ],
     useCases: [
@@ -170,6 +182,33 @@ export const products: ProductDetail[] = [
       "Cross-border e-commerce",
       "SaaS subscriptions",
       "On-demand & gig platforms",
+    ],
+    useCasesEyebrow: "Global Digital Use Cases",
+    useCasesTitle:
+      "Enterprise Payment Infrastructure Powering Global Digital Business Models",
+    useCasesSubtitle:
+      "Airpay enables scalable payments, disbursements, and Digital Carrier Billing experiences for high-growth digital platforms operating across emerging and global markets.",
+    useCaseCards: [
+      {
+        title: "Marketplace & Creator Economy Platforms",
+        description:
+          "Seamlessly manage collections, seller settlements, and creator payouts through scalable payment infrastructure.",
+      },
+      {
+        title: "Cross-Border Commerce & Global Expansion",
+        description:
+          "Enable localized payment experiences and frictionless transactions across high-growth international markets.",
+      },
+      {
+        title: "SaaS, Subscription & Digital Service Platforms",
+        description:
+          "Optimize recurring billing, payment accessibility, and scalable subscription operations for global digital users.",
+      },
+      {
+        title: "On-Demand, Gig Economy & Platform Businesses",
+        description:
+          "Power real-time collections and automated disbursement experiences designed for scalable digital workforce ecosystems.",
+      },
     ],
   },
   {
@@ -210,10 +249,22 @@ export const products: ProductDetail[] = [
       },
     ],
     steps: [
-      { title: "Define plans & prices", description: "Flexible pricing models with usage tiers." },
-      { title: "Subscribe customers via API", description: "One call to create, upgrade, or cancel." },
-      { title: "Auto-charge & retry", description: "Smart retry handles soft declines automatically." },
-      { title: "Settle & reconcile", description: "Reconciled data feeds straight into your finance stack." },
+      {
+        title: "Define plans & prices",
+        description: "Flexible pricing models with usage tiers.",
+      },
+      {
+        title: "Subscribe customers via API",
+        description: "One call to create, upgrade, or cancel.",
+      },
+      {
+        title: "Auto-charge & retry",
+        description: "Smart retry handles soft declines automatically.",
+      },
+      {
+        title: "Settle & reconcile",
+        description: "Reconciled data feeds straight into your finance stack.",
+      },
     ],
     useCases: [
       "SaaS & software subscriptions",
@@ -226,44 +277,60 @@ export const products: ProductDetail[] = [
     slug: "edc-payment-solutions",
     name: "EDC Payment Solutions",
     shortName: "EDC",
-    eyebrow: "In-Store",
-    tagline: "Payments at the counter, online-grade reporting.",
+    eyebrow: "In-Store Payments",
+    tagline: "Modern In-Store Payments Built for Connected Commerce",
     description:
-      "Modern EDC terminals and acquiring infrastructure for in-store payments — connected to the same dashboard and reporting your online channels use.",
+      "Enable seamless in-store payment experiences through Airpay’s enterprise-grade acquiring infrastructure. Accept card, QR, and contactless transactions while managing settlements and reporting through one unified payment ecosystem.",
     illustration: "/images/photos/image_edc.webp",
     icon: CreditCard,
-    highlights: ["Acquiring", "QR & contactless", "Unified reporting"],
+    highlights: [
+      "Card & Contactless Payments",
+      "QR & Digital Wallet Acceptance",
+      "Unified Settlement & Reporting",
+    ],
     features: [
       {
         icon: ScanLine,
-        title: "QR + tap-to-pay",
+        title: "All-in-One Payments (QR + Tap-to-Pay)",
         description:
-          "Accept QRIS, NFC, contactless, and chip — every method on one device.",
+          "Accept QRIS, NFC/contactless, chip cards, and magnetic stripe — every payment method on one smart EDC device.",
       },
       {
         icon: Banknote,
-        title: "Acquiring & settlement",
+        title: "Acquiring & Settlement",
         description:
-          "Direct acquiring with bank partners and same-day settlement options.",
+          "Direct acquiring with trusted bank partners and flexible settlement options.",
       },
       {
         icon: Database,
-        title: "Unified back office",
+        title: "Unified Back Office",
         description:
-          "In-store and online transactions in one dashboard for finance and ops.",
+          "Monitor in-store and online transactions in one dashboard. Real-time reporting, reconciliation, and performance insights for better decision-making.",
       },
       {
         icon: ShieldCheck,
-        title: "EMV & PCI compliant",
+        title: "EMV & PCI Compliant",
         description:
-          "Certified terminals with end-to-end encryption.",
+          "Certified EDC terminals with EMV chip technology and PCI PTS security standards to keep every transaction safe.",
       },
     ],
     steps: [
-      { title: "Provision terminals", description: "Pre-configured devices shipped to your stores." },
-      { title: "Customer taps or scans", description: "Cards, e-wallets, or QR — accepted instantly." },
-      { title: "Real-time authorization", description: "Approval in seconds via Airpay acquirer." },
-      { title: "Settle & report", description: "Funds settle and flow into your unified dashboard." },
+      {
+        title: "Provision terminals",
+        description: "Pre-configured devices shipped to your stores.",
+      },
+      {
+        title: "Customer taps or scans",
+        description: "Cards, e-wallets, or QR — accepted instantly.",
+      },
+      {
+        title: "Real-time authorization",
+        description: "Approval in seconds via Airpay acquirer.",
+      },
+      {
+        title: "Settle & report",
+        description: "Funds settle and flow into your unified dashboard.",
+      },
     ],
     useCases: [
       "Retail & F&B chains",
@@ -273,53 +340,27 @@ export const products: ProductDetail[] = [
     ],
   },
   {
-    slug: "cross-border-payments",
-    name: "Cross-Border Payments",
-    shortName: "Cross-Border",
-    eyebrow: "Global Rails",
-    tagline: "Move money across borders, on local rails.",
+    slug: "payment-link",
+    name: "Payment Link",
+    shortName: "Payment Link",
+    eyebrow: "Payment Link Flow",
+    tagline: "Create. Share. Get Paid.",
     description:
-      "Send and receive payments across borders using local payment rails — better FX, lower fees, faster settlement than traditional correspondent banking.",
-    illustration: "/images/photos/image_cross.webp",
-    icon: Globe,
-    highlights: ["50+ corridors", "Local rails", "Better FX"],
-    features: [
-      {
-        icon: Globe,
-        title: "Local rail coverage",
-        description:
-          "Payments delivered via local schemes for speed and lower cost.",
-      },
-      {
-        icon: TrendingUp,
-        title: "Transparent FX",
-        description:
-          "Mid-market rates with a small, predictable margin — no hidden spread.",
-      },
-      {
-        icon: Zap,
-        title: "Faster settlement",
-        description:
-          "Most corridors settle in minutes, not days.",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Compliance & sanctions",
-        description:
-          "Built-in KYB, KYC, and sanctions screening for every corridor.",
-      },
+      "Create a payment link in seconds and get paid anytime, anywhere. Simple for you, seamless for your customers.",
+    illustration: "/images/photos/image_hero.webp",
+    icon: Link2,
+    highlights: [
+      "Instant Payment Link",
+      "Share Anywhere",
+      "Secure & Trusted",
     ],
-    steps: [
-      { title: "Initiate transfer via API", description: "Origin, destination, currency, beneficiary." },
-      { title: "FX conversion", description: "Live mid-market rate locked at quote time." },
-      { title: "Local rail delivery", description: "Routed via the best local scheme available." },
-      { title: "Confirmation & receipt", description: "Real-time status with audit trail." },
-    ],
+    features: [],
+    steps: [],
     useCases: [
-      "Marketplace seller payouts",
-      "Cross-border B2B invoicing",
-      "Payroll for global teams",
-      "Remittance partners",
+      "Freelancers & consultants",
+      "Online sellers & social commerce",
+      "Service-based businesses",
+      "Events, tickets & donations",
     ],
   },
 ];

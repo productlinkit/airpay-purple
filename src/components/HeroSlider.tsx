@@ -7,8 +7,7 @@ import {
   ChevronLeft,
   ChevronRight,
   ArrowRight,
-  User as UserIcon,
-  Globe,
+  ShieldCheck,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Nav, GetStartedButton } from "./Nav";
@@ -28,9 +27,9 @@ type Slide =
 const slides: Slide[] = [
   {
     kind: "legacy",
-    title: "Helping Businesses Scale Without Limits",
-    body: "Unlock global growth through Airpay’s connected Direct Carrier Billing and digital payment ecosystem. Reach millions of potential customers, access diverse local payment options across multiple markets, and scale your business worldwide through one powerful and seamless integration.",
-    image: "/images/photos/image_hero.webp",
+    title: "Expand Globally Through Localized Payments",
+    body: "Redefine global payment experiences through Airpay’s unified Digital Carrier Billing and digital payment ecosystem. Empower your business to reach millions of users, unlock localized payment connectivity across high-growth markets, and accelerate borderless expansion through scalable enterprise infrastructure.",
+    image: "/images/new/hero-slide1.webp",
     buttonText: "Get Started",
   },
   { kind: "dcb" },
@@ -142,16 +141,19 @@ export function HeroSlider() {
           {/* Info tab — bottom-left (legacy slide only) */}
           {slides[currentSlide].kind === "legacy" && (
             <div
-              className="absolute bottom-0 left-0 z-20 hidden max-w-[460px] bg-[#E4EEFA]/95 p-6 backdrop-blur-sm sm:block sm:p-8"
+              className="absolute bottom-0 left-0 z-20 hidden max-w-[760px] bg-[#E4EEFA]/95 px-6 py-4 backdrop-blur-sm sm:block sm:px-8 sm:py-5 lg:px-10 lg:py-6"
               style={{
                 borderTopRightRadius: 60,
                 borderBottomLeftRadius: 40,
               }}>
-              <p className="text-[15px] leading-relaxed text-black sm:text-[16px]">
-                Connected to{" "}
-                <strong className="font-bold">100+ merchants</strong> across
-                different verticals, through{" "}
-                <strong className="font-bold">85+ payment channels</strong>
+              <p className="text-[12px] leading-[1.5] text-black sm:text-[12px] lg:text-[13px]">
+                <strong className="font-bold">
+                  Powering Millions Through One Unified Payment Ecosystem.
+                </strong>{" "}
+                Seamlessly connect to localized payment methods, Digital Carrier
+                Billing, and{" "}
+                <strong className="font-bold">85+ digital payment channels</strong>{" "}
+                designed to accelerate growth across high-growth global markets.
               </p>
             </div>
           )}
@@ -174,7 +176,7 @@ function LegacySlide({
     <>
       <div
         className={cn(
-          "absolute inset-y-0 right-0 z-10 hidden w-[55%] sm:block sm:opacity-100",
+          "absolute inset-y-0 right-0 z-10 hidden w-[55%] pt-[100px] sm:block sm:opacity-100 sm:pt-[110px] lg:pt-[120px]",
           active && "animate-hero-image",
         )}>
         <div className="relative h-full w-full">
@@ -222,7 +224,7 @@ function DCBSlide() {
       {/* ── Background photo — full right side, behind cards ── */}
       <div className="absolute inset-y-0 right-0 z-0 hidden w-[55%] sm:block">
         <Image
-          src="/images/photos/image_slide_2.webp"
+          src="/images/new/hero-slide2.webp"
           alt="Digital Carrier Billing"
           fill
           priority
@@ -237,15 +239,17 @@ function DCBSlide() {
         </span>
 
         <h2 className="mt-4 font-heading text-[26px] font-extrabold leading-[1.05] tracking-tight text-black sm:mt-5 sm:text-[44px] lg:text-[56px]">
-          Digital Carrier Billing
+          Unlock Mobile-First Payments
           <br />
-          made <span className="">simple</span>
+          at <span className="">Global Scale</span>
         </h2>
 
         <p className="mt-3 max-w-[480px] text-[13px] leading-relaxed text-[#2b2f38] sm:mt-5 sm:text-[15px] lg:text-[16px]">
-          Enable mobile payments through Digital Carrier Billing. Reach more
-          users, increase conversions, and grow your revenue across emerging
-          markets.
+          Enable seamless Digital Carrier Billing experiences through Airpay’s
+          enterprise-grade payment infrastructure. Reach millions of mobile
+          users, improve transaction success rates, and accelerate growth across
+          high-potential emerging markets through frictionless carrier-connected
+          payments.
         </p>
 
         <div className="mt-5 flex flex-wrap items-center gap-2 sm:mt-7">
@@ -271,11 +275,44 @@ function DCBSlide() {
 
 /* ──────────────────────── Slide 3 — Aggregator hub ──────────────────────── */
 
-const AGG_TRUST_LOGOS = [
+const AGG_TRUST_LOGOS_ROW_1 = [
   "/images/channels/Indonesia/OVO.png",
   "/images/channels/Indonesia/DANA.png",
   "/images/channels/Indonesia/GOPAY.png",
+];
+
+const AGG_TRUST_LOGOS_ROW_2 = [
   "/images/channels/Indonesia/LinkAja.png",
+  "/images/channels/Indonesia/QRIS.png",
+  "/images/channels/Mexico/VISA.png",
+  "/images/channels/Mexico/Mastercard.png",
+];
+
+type AggStat = {
+  value: string;
+  label: string;
+  description: string;
+};
+
+const AGG_STATS: AggStat[] = [
+  {
+    value: "Millions",
+    label: "Reachable Users",
+    description:
+      "Access millions of mobile users across diverse digital ecosystems.",
+  },
+  {
+    value: "85+",
+    label: "Localized Payment Methods",
+    description:
+      "Connect to 85+ local payment methods and deliver seamless checkout experiences.",
+  },
+  {
+    value: "15+",
+    label: "Emerging Market Coverage",
+    description:
+      "Expand your business across 15+ high-growth markets with one integration.",
+  },
 ];
 
 function AggregatorSlide() {
@@ -284,7 +321,7 @@ function AggregatorSlide() {
       {/* ── Background photo — full right side, behind cards ── */}
       <div className="absolute inset-y-0 right-0 z-0 hidden w-[60%] sm:block">
         <Image
-          src="/images/photos/image_slide_3.webp"
+          src="/images/new/hero-slide3.webp"
           alt="Digital Payments"
           fill
           priority
@@ -299,17 +336,18 @@ function AggregatorSlide() {
         </span>
 
         <h2 className="mt-4 font-heading text-[24px] font-extrabold leading-[1.08] tracking-tight text-black sm:mt-5 sm:text-[42px] lg:text-[52px]">
-          One Integration,
+          Scale Globally Through
           <br />
-          All Payment Methods
+          Localized
           <br />
-          <span className="">More Growth</span>
+          <span className="">Payment Experiences</span>
         </h2>
 
         <p className="mt-3 max-w-[480px] text-[13px] leading-relaxed text-[#2b2f38] sm:mt-5 sm:text-[15px] lg:text-[16px]">
-          Airpay connects you to 100+ payment channels including e-wallets, bank
-          transfers, QR payments, cards, and more. Accept payments easily and
-          scale your business globally.
+          Unlock seamless access to diverse payment ecosystems across global
+          markets through Airpay’s enterprise digital payment infrastructure,
+          designed to maximize payment reach, transaction performance, and
+          scalable business growth.
         </p>
 
         <div className="mt-5 flex flex-wrap items-center gap-2 sm:mt-7">
@@ -330,30 +368,65 @@ function AggregatorSlide() {
         </div>
       </div>
 
-      {/* ── Bottom trust strip (aggregator variant) ── */}
-      <div className="absolute bottom-[100px] left-4 right-4 z-20 hidden rounded-[24px] bg-white/85 px-6 py-4 shadow-[0_10px_40px_rgba(80,60,180,0.18)] backdrop-blur-md sm:block sm:bottom-[110px] sm:left-6 sm:right-6 lg:bottom-[110px] lg:left-20 lg:right-12 lg:px-7">
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-3 lg:flex-nowrap lg:gap-x-9">
-          <AggIconStat icon={UserIcon} value="100+" label="Merchants" />
-          <AggIconStat
-            icon={LayoutGridIcon}
-            value="85+"
-            label="Payment Channels"
-          />
-          <AggIconStat icon={Globe} value="15+" label="Countries" />
-          <p className="hidden max-w-[210px] flex-shrink-0 text-[11px] leading-tight text-[#2b2f38] lg:block lg:text-[12px]">
-            Trusted by leading businesses and powered by global partners
-          </p>
-          <div className="ml-auto hidden items-center gap-5 lg:flex">
-            {AGG_TRUST_LOGOS.map((src, i) => (
-              <Image
-                key={i}
-                src={src}
-                alt="Payment partner"
-                width={70}
-                height={26}
-                className="h-6 w-auto object-contain opacity-95"
-              />
+      {/* ── Bottom trust card (aggregator variant) ── */}
+      <div className="absolute bottom-4 left-4 right-4 z-20 hidden rounded-[20px] bg-white/55 px-4 py-3 shadow-[0_10px_30px_rgba(80,60,180,0.16)] backdrop-blur-xl sm:block sm:bottom-6 sm:left-6 sm:right-6 sm:rounded-[24px] sm:px-6 sm:py-4 lg:bottom-6 lg:left-12 lg:right-12 lg:rounded-[26px] lg:px-7 lg:py-5">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-[1.5fr_1fr] lg:gap-7">
+          {/* LEFT — 3 stat blocks */}
+          <div className="grid grid-cols-3 gap-3 sm:gap-4">
+            {AGG_STATS.map((s) => (
+              <div key={s.label} className="flex flex-col">
+                <div className="font-heading text-[20px] font-extrabold leading-none text-[#5a3fdb] sm:text-[26px] lg:text-[30px]">
+                  {s.value}
+                </div>
+                <div className="mt-1 font-heading text-[10px] font-extrabold leading-tight text-black sm:text-[11px] lg:text-[12px]">
+                  {s.label}
+                </div>
+                <p className="mt-1 hidden text-[9px] leading-snug text-[#2b2f38] sm:block sm:text-[10px] lg:text-[11px]">
+                  {s.description}
+                </p>
+              </div>
             ))}
+          </div>
+
+          {/* RIGHT — pill + title + logos + footer */}
+          <div className="flex flex-col">
+            <div className="inline-flex w-fit items-center gap-1.5 rounded-full bg-white/70 px-2.5 py-0.5 text-[8px] font-bold text-[#5a3fdb] backdrop-blur-sm sm:text-[9px] lg:text-[10px]">
+              <ShieldCheck className="h-2.5 w-2.5" />
+              Trusted by forward-thinking businesses
+            </div>
+
+            <h3 className="mt-1.5 font-heading text-[11px] font-extrabold leading-tight text-black sm:text-[13px] lg:text-[14px]">
+              Accelerating global expansion through{" "}
+              <span className="bg-gradient-to-r from-[#7E5BFF] to-[#B47BFF] bg-clip-text text-transparent">
+                one unified payment ecosystem
+              </span>
+              .
+            </h3>
+
+            <div className="mt-2 grid grid-cols-4 gap-1 sm:grid-cols-7 sm:gap-1.5">
+              {AGG_TRUST_LOGOS_ROW_1.concat(AGG_TRUST_LOGOS_ROW_2).map((src, i) => (
+                <div
+                  key={i}
+                  className="flex h-6 items-center justify-center rounded bg-white/80 px-1.5 backdrop-blur-sm sm:h-7">
+                  <Image
+                    src={src}
+                    alt="Payment partner"
+                    width={70}
+                    height={26}
+                    className="h-3.5 w-auto object-contain sm:h-4"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-2 flex items-center gap-1.5 text-[8px] text-[#515A5E] sm:text-[9px]">
+              <ShieldCheck className="h-2.5 w-2.5 flex-shrink-0 text-[#8169FF]" />
+              <span className="font-semibold text-[#1f2230]">
+                Secure. Reliable. Compliant.
+              </span>
+              <span className="text-[#8169FF]">|</span>
+              <span>Enterprise-Grade Infrastructure</span>
+            </div>
           </div>
         </div>
       </div>
@@ -361,46 +434,3 @@ function AggregatorSlide() {
   );
 }
 
-function LayoutGridIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round">
-      <rect x="3" y="3" width="7" height="7" rx="1.5" />
-      <rect x="14" y="3" width="7" height="7" rx="1.5" />
-      <rect x="3" y="14" width="7" height="7" rx="1.5" />
-      <rect x="14" y="14" width="7" height="7" rx="1.5" />
-    </svg>
-  );
-}
-
-function AggIconStat({
-  icon: Icon,
-  value,
-  label,
-}: {
-  icon: React.ComponentType<{ className?: string }>;
-  value: string;
-  label: string;
-}) {
-  return (
-    <div className="flex items-center gap-3">
-      <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#8169FF]/15 text-[#5a3fdb]">
-        <Icon className="h-5 w-5" />
-      </span>
-      <div className="leading-tight">
-        <div className="font-heading text-[18px] font-extrabold text-[#5a3fdb] lg:text-[20px]">
-          {value}
-        </div>
-        <div className="text-[10px] text-[#2b2f38]/85 lg:text-[11px]">
-          {label}
-        </div>
-      </div>
-    </div>
-  );
-}
